@@ -3,7 +3,7 @@ During the last decade, highly parallel and distributed Cyber Physical Systems (
 
 In this work, we present the APOLLON Simulation Framework which is an extension of an open-source framework (i.e. COSSIM [[1]](#1)) that aims to address all the aforementioned limitations. COSSIM efficiently integrates a series of sub-tools that model the computing devices of the processing nodes as well as the network(s) of the parallel systems. It provides cycle accurate results by simulating the actual application and system software executed on each node, together with the actual networks employed and it provides power/energy consumption estimation for both the processing elements and the network based on the actual dynamic usage scenarios. In this work, we extend COSSIM by introducing a novel flow that enables the designer to rapidly simulate the physical aspects of the CPSs in conjunction with the Processing & Network systems without worrying about communication and synchronisation issues. This allows CPS designers to simulate not only the software part of a CPS (on the processing units) but also its physical part within the same environment; this novel aspect significantly accelerates the final product delivery. Last but not least, APOLLON employs a standardized interconnection protocol between its sub-components (i.e. IEEE 1516.x  HLA (IEEE 1516.x: Standard for Modeling and Simulation High Level Architecture (HLA).), thus it can be seamlessly connected to additional similar tools.
 
-Details of this work is presented in [[2]](#2) journal paper.
+Implementation details is presented in [[2]](#2) journal paper.
 
 ## Installation & Execution
 
