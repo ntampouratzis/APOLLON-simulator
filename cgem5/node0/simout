@@ -1,0 +1,215 @@
+Redirecting stdout and stderr to /home/apollon/APOLLON/cgem5/node0/simout
+gem5 Simulator System.  http://gem5.org
+gem5 is copyrighted software; use the --copyright option for details.
+
+gem5 compiled Feb  9 2021 01:21:23
+gem5 started Feb 21 2022 06:47:28
+gem5 executing on ubuntu, pid 2546
+command line: /home/apollon/APOLLON/cgem5/build/ARM/gem5.opt --listener-mode=on -r -d /home/apollon/APOLLON/cgem5/node0 /home/apollon/APOLLON/cgem5/configs/example/fs.py --kernel=vmlinux.aarch32.Apollon --disk-image=linux-aarch32-ael.img --mem-size=512MB --SynchTime=1ms --RxPacketTime=100us --TotalNodes=2 --nodeNum=0 --machine-type=VExpress_EMM --dtb=vexpress.aarch32.ll_20131205.0-gem5.1cpu.dtb --script=/home/apollon/APOLLON/cgem5/configs/boot/COSSIM/script0.rcS --PtolemySynchTime=100us --cossim
+
+Global frequency set at 1000000000000 ticks per second
+
+1. COSSIM_PROC_NET_NODE0
+HLA_GEM5 Note : FederationExecutionAlreadyExists Reason is : COSSIM_PROC_NET_NODE0. OK I can join it
+announceSynchronizationPoint
+
+2. GEM5_NODE0
+HLA_GEM5 Note : FederationExecutionAlreadyExists Reason is : GLOBAL_SYNCHRONIZATION. OK I can join it
+announceSynchronizationPoint
+warn: DRAM device capacity (8192 Mbytes) does not match the address range assigned (512 Mbytes)
+info: kernel located at: /home/apollon/APOLLON/kernels/binaries/vmlinux.aarch32.Apollon
+==========================
+RESPONSES FROM ROOT OBJECT
+==========================
+Listening for testsys connection on port 5901
+Listening for testsys connection on port 3000
+0: testsys.remote_gdb.listener: listening for remote gdb #0 on port 7001
+info: Using bootloader at address 0x10
+info: Using kernel entry physical address at 0x80008000
+info: Loading DTB file: /home/apollon/APOLLON/kernels/binaries/vexpress.aarch32.ll_20131205.0-gem5.1cpu.dtb at address 0x88000000
+**** REAL SIMULATION ****
+warn: Existing EnergyCtrl, but no enabled DVFSHandler found.
+info: Entering event queue @ 0.  Starting simulation...
+Discovered object handle = 1, name = sensor1
+warn: Not doing anything for miscreg ACTLR
+warn: Not doing anything for write of miscreg ACTLR
+warn: The clidr register always reports 0 caches.
+warn: clidr LoUIS field of 0b001 to match current ARM implementations.
+warn: The csselr register isn't implemented.
+warn: 	instruction 'mcr dccmvau' unimplemented
+warn: 	instruction 'mcr icimvau' unimplemented
+warn: 	instruction 'mcr bpiallis' unimplemented
+warn: 	instruction 'mcr icialluis' unimplemented
+warn: 	instruction 'mcr dccimvac' unimplemented
+warn: Tried to read RealView I/O at offset 0x60 that doesn't exist
+8047837000: testsys.terminal: attach terminal 0
+warn: Tried to write RVIO at offset 0xa8 (data 0) that doesn't exist
+warn: Tried to write RVIO at offset 0xa8 (data 0) that doesn't exist
+warn: Tried to write RVIO at offset 0xa8 (data 0) that doesn't exist
+warn: Tried to write RVIO at offset 0xa8 (data 0) that doesn't exist
+warn: Tried to write RVIO at offset 0xa8 (data 0) that doesn't exist
+warn: Tried to write RVIO at offset 0xa8 (data 0) that doesn't exist
+warn: Tried to write RVIO at offset 0xa8 (data 0) that doesn't exist
+warn: Tried to write RVIO at offset 0xa8 (data 0) that doesn't exist
+warn: Tried to write RVIO at offset 0xa8 (data 0) that doesn't exist
+info: trap check M:0 N:0 1:0 2:0 hdcr 0, hcptr 3fff, hstr 0
+info: trap check M:0 N:0 1:0 2:0 hdcr 0, hcptr 3fff, hstr 0
+info: trap check M:0 N:0 1:0 2:0 hdcr 0, hcptr 3fff, hstr 0
+info: trap check M:0 N:0 1:0 2:0 hdcr 0, hcptr 3fff, hstr 0
+info: trap check M:0 N:0 1:0 2:0 hdcr 0, hcptr 3fff, hstr 0
+info: trap check M:0 N:0 1:0 2:0 hdcr 0, hcptr 3fff, hstr 0
+info: trap check M:0 N:0 1:0 2:0 hdcr 0, hcptr 3fff, hstr 0
+info: trap check M:0 N:0 1:0 2:0 hdcr 0, hcptr 3fff, hstr 0
+info: trap check M:0 N:0 1:0 2:0 hdcr 0, hcptr 3fff, hstr 0
+info: trap check M:0 N:0 1:0 2:0 hdcr 0, hcptr 3fff, hstr 0
+info: trap check M:0 N:0 1:0 2:0 hdcr 0, hcptr 3fff, hstr 0
+info: trap check M:0 N:0 1:0 2:0 hdcr 0, hcptr 3fff, hstr 0
+info: trap check M:0 N:0 1:0 2:0 hdcr 0, hcptr 3fff, hstr 0
+info: trap check M:0 N:0 1:0 2:0 hdcr 0, hcptr 3fff, hstr 0
+info: trap check M:0 N:0 1:0 2:0 hdcr 0, hcptr 3fff, hstr 0
+warn: CP14 unimplemented crn[1], opc1[0], crm[3], opc2[4]
+warn: CP14 unimplemented crn[1], opc1[0], crm[0], opc2[4]
+warn: CP14 unimplemented crn[0], opc1[0], crm[7], opc2[0]
+warn: Returning zero for read from miscreg pmcr
+warn: Ignoring write to miscreg pmcntenclr
+warn: Ignoring write to miscreg pmintenclr
+warn: Ignoring write to miscreg pmovsr
+warn: Ignoring write to miscreg pmcr
+the class of the new created object is Node0actuator1
+Exiting @ tick 6282345225000 because m5_exit instruction encountered
+Power results are not available because McPat xml file is not exist!
+
+the class of the new created object is Node0PtolemyStopExecution
+==========================
+RESPONSES FROM ROOT OBJECT
+==========================
+==========================
+RESPONSES FROM ROOT OBJECT
+==========================
+==========================
+RESPONSES FROM ROOT OBJECT
+==========================
+RTIA:: RTIA has thrown RTIA:: RTIA has thrown NetworkError exception.NetworkError exception.
+
+RTIA:: Reason: Connection closed by client.RTIA:: Reason: 
+Connection closed by client.
+
+RTIA: Statistics (processed messages)
+
+RTIA: Statistics (processed messages)
+List of federate initiated services 
+--------------------------------------------------
+       1 Message::OPEN_CONNEXION (MSG#1)
+       1 Message::RESIGN_FEDERATION_EXECUTION (MSG#6)
+       1 Message::SYNCHRONIZATION_POINT_ACHIEVED (MSG#11)
+       1 Message::PUBLISH_INTERACTION_CLASS (MSG#31)
+       1 Message::SUBSCRIBE_INTERACTION_CLASS (MSG#35)
+       9 Message::SEND_INTERACTION (MSG#45)
+   62832 Message::QUERY_FEDERATE_TIME (MSG#86)
+   62832 Message::TIME_ADVANCE_REQUEST (MSG#92)
+       2 Message::GET_INTERACTION_CLASS_HANDLE (MSG#117)
+       4 Message::GET_PARAMETER_HANDLE (MSG#119)
+   62848 Message::TICK_REQUEST (MSG#142)
+   62836 Message::TICK_REQUEST_NEXT (MSG#143)
+       1 Message::JOIN_FEDERATION_EXECUTION_V4 (MSG#149)
+
+List of RTI initiated services 
+--------------------------------------------------
+       1 NetworkMessage::Type::ANNOUNCE_SYNCHRONIZATION_POINT (MSG#14)
+       1 NetworkMessage::Type::FEDERATION_SYNCHRONIZED (MSG#16)
+       2 NetworkMessage::Type::RECEIVE_INTERACTION (MSG#48)
+
+ Number of Federate messages : 251369
+RTIA:: RTIA has thrown  Number of RTIG messages : 4
+NetworkError exception.
+RTIA:: Reason: Connection closed by client.
+
+RTIA: Statistics (processed messages)
+List of federate initiated services 
+--------------------------------------------------
+       1 Message::OPEN_CONNEXION (MSG#1)
+       2 Message::DESTROY_FEDERATION_EXECUTION (MSG#4)
+       1 Message::RESIGN_FEDERATION_EXECUTION (MSG#6)
+       1 Message::REGISTER_FEDERATION_SYNCHRONIZATION_POINT (MSG#7)
+       1 Message::SYNCHRONIZATION_POINT_ACHIEVED (MSG#11)
+       1 Message::PUBLISH_OBJECT_CLASS (MSG#29)
+       1 Message::SUBSCRIBE_OBJECT_CLASS_ATTRIBUTES (MSG#33)
+       2 Message::REGISTER_OBJECT_INSTANCE (MSG#41)
+     101 Message::UPDATE_ATTRIBUTE_VALUES (MSG#42)
+       2 Message::DELETE_OBJECT_INSTANCE (MSG#47)
+       1 Message::ENABLE_TIME_REGULATION (MSG#81)
+       1 Message::DISABLE_TIME_REGULATION (MSG#82)
+       1 Message::ENABLE_TIME_CONSTRAINED (MSG#83)
+       1 Message::DISABLE_TIME_CONSTRAINED (MSG#84)
+   62826 Message::QUERY_FEDERATE_TIME (MSG#86)
+   62825 Message::TIME_ADVANCE_REQUEST (MSG#92)
+       2 Message::GET_OBJECT_CLASS_HANDLE (MSG#113)
+     112 Message::GET_ATTRIBUTE_HANDLE (MSG#115)
+     100 Message::GET_ATTRIBUTE_NAME (MSG#116)
+     103 Message::GET_OBJECT_INSTANCE_HANDLE (MSG#121)
+     103 Message::GET_OBJECT_INSTANCE_NAME (MSG#122)
+ TCP Socket  3 : total =      1623 Bytes sent 
+   62930 Message::TICK_REQUEST (MSG#142)
+ TCP Socket  3 : total =      1457 Bytes received
+   62934 Message::TICK_REQUEST_NEXT (MSG#143)
+       1 Message::CREATE_FEDERATION_EXECUTION_V4 (MSG#148)
+       1 Message::JOIN_FEDERATION_EXECUTION_V4 (MSG#149)
+
+List of RTI initiated services 
+ UDP Socket  4 : total =         0 Bytes sent 
+--------------------------------------------------
+ UDP Socket  4 : total =         0 Bytes received
+   62825 NetworkMessage::Type::MESSAGE_NULL (MSG#2)
+       1 NetworkMessage::Type::ADDITIONAL_FOM_MODULE (MSG#6)
+       3 NetworkMessage::Type::SET_TIME_REGULATING (MSG#8)
+       1 NetworkMessage::Type::TIME_REGULATION_ENABLED (MSG#10)
+       1 NetworkMessage::Type::TIME_CONSTRAINED_ENABLED (MSG#11)
+       1 NetworkMessage::Type::CONFIRM_SYNCHRONIZATION_POINT_REGISTRATION (MSG#13)
+       1 NetworkMessage::Type::ANNOUNCE_SYNCHRONIZATION_POINT (MSG#14)
+       1 NetworkMessage::Type::FEDERATION_SYNCHRONIZED (MSG#16)
+       1 NetworkMessage::Type::DISCOVER_OBJECT (MSG#44)
+     100 NetworkMessage::Type::REFLECT_ATTRIBUTE_VALUES (MSG#46)
+       1 NetworkMessage::Type::REMOVE_OBJECT (MSG#50)
+       2 NetworkMessage::Type::START_REGISTRATION_FOR_OBJECT_CLASS (MSG#90)
+
+ Number of Federate messages : 252054
+ Number of RTIG messages : 62938
+ TCP Socket  3 : total =   2018889 Bytes sent 
+ TCP Socket  3 : total =   2028190 Bytes received
+ UDP Socket  4 : total =         0 Bytes sent 
+ UDP Socket  4 : total =         0 Bytes received
+List of federate initiated services 
+--------------------------------------------------
+       1 Message::OPEN_CONNEXION (MSG#1)
+       1 Message::RESIGN_FEDERATION_EXECUTION (MSG#6)
+       1 Message::SYNCHRONIZATION_POINT_ACHIEVED (MSG#11)
+       1 Message::PUBLISH_INTERACTION_CLASS (MSG#31)
+       1 Message::SUBSCRIBE_INTERACTION_CLASS (MSG#35)
+       1 Message::ENABLE_TIME_REGULATION (MSG#81)
+       1 Message::DISABLE_TIME_REGULATION (MSG#82)
+       1 Message::ENABLE_TIME_CONSTRAINED (MSG#83)
+       1 Message::DISABLE_TIME_CONSTRAINED (MSG#84)
+    6283 Message::QUERY_FEDERATE_TIME (MSG#86)
+    6282 Message::TIME_ADVANCE_REQUEST (MSG#92)
+       2 Message::GET_INTERACTION_CLASS_HANDLE (MSG#117)
+       4 Message::GET_PARAMETER_HANDLE (MSG#119)
+    6953 Message::TICK_REQUEST (MSG#142)
+    6286 Message::TICK_REQUEST_NEXT (MSG#143)
+       1 Message::JOIN_FEDERATION_EXECUTION_V4 (MSG#149)
+
+List of RTI initiated services 
+--------------------------------------------------
+   12566 NetworkMessage::Type::MESSAGE_NULL (MSG#2)
+       1 NetworkMessage::Type::ADDITIONAL_FOM_MODULE (MSG#6)
+       3 NetworkMessage::Type::SET_TIME_REGULATING (MSG#8)
+       1 NetworkMessage::Type::TIME_REGULATION_ENABLED (MSG#10)
+       1 NetworkMessage::Type::TIME_CONSTRAINED_ENABLED (MSG#11)
+       1 NetworkMessage::Type::ANNOUNCE_SYNCHRONIZATION_POINT (MSG#14)
+       1 NetworkMessage::Type::FEDERATION_SYNCHRONIZED (MSG#16)
+
+ Number of Federate messages : 25820
+ Number of RTIG messages : 12574
+ TCP Socket  3 : total =    201452 Bytes sent 
+ TCP Socket  3 : total =    403512 Bytes received
+ UDP Socket  4 : total =         0 Bytes sent 
+ UDP Socket  4 : total =         0 Bytes received

@@ -1,0 +1,692 @@
+
+---------- Begin Simulation Statistics ----------
+sim_seconds                                  3.492585                       # Number of seconds simulated
+sim_ticks                                3492584549500                       # Number of ticks simulated
+final_tick                               6282345225000                       # Number of ticks from beginning of simulation (restored from checkpoints and never reset)
+sim_freq                                 1000000000000                       # Frequency of simulated ticks
+host_inst_rate                                1023928                       # Simulator instruction rate (inst/s)
+host_op_rate                                  1255798                       # Simulator op (including micro ops) rate (op/s)
+host_tick_rate                            17547085738                       # Simulator tick rate (ticks/s)
+host_mem_usage                                 900340                       # Number of bytes of host memory used
+host_seconds                                   199.04                       # Real time elapsed on the host
+sim_insts                                   203803308                       # Number of instructions simulated
+sim_ops                                     249954834                       # Number of ops (including micro ops) simulated
+testsys.voltage_domain.voltage                      1                       # Voltage in Volts
+testsys.clk_domain.clock                         1000                       # Clock period in ticks
+testsys.mem_ctrls.pwrStateResidencyTicks::UNDEFINED 6282345225000                       # Cumulative time (in ticks) in various power states
+testsys.mem_ctrls.bytes_read::cpu.dtb.walker        40920                       # Number of bytes read from this memory
+testsys.mem_ctrls.bytes_read::cpu.itb.walker        19740                       # Number of bytes read from this memory
+testsys.mem_ctrls.bytes_read::cpu.inst      202727916                       # Number of bytes read from this memory
+testsys.mem_ctrls.bytes_read::cpu.data       55646949                       # Number of bytes read from this memory
+testsys.mem_ctrls.bytes_read::realview.apollondev        92000                       # Number of bytes read from this memory
+testsys.mem_ctrls.bytes_read::realview.ethernet          826                       # Number of bytes read from this memory
+testsys.mem_ctrls.bytes_read::realview.ide        15624                       # Number of bytes read from this memory
+testsys.mem_ctrls.bytes_read::total         258543975                       # Number of bytes read from this memory
+testsys.mem_ctrls.bytes_inst_read::cpu.inst    202727916                       # Number of instructions bytes read from this memory
+testsys.mem_ctrls.bytes_inst_read::total    202727916                       # Number of instructions bytes read from this memory
+testsys.mem_ctrls.bytes_written::cpu.data     26919748                       # Number of bytes written to this memory
+testsys.mem_ctrls.bytes_written::realview.apollondev          800                       # Number of bytes written to this memory
+testsys.mem_ctrls.bytes_written::realview.ethernet          318                       # Number of bytes written to this memory
+testsys.mem_ctrls.bytes_written::realview.ide        28672                       # Number of bytes written to this memory
+testsys.mem_ctrls.bytes_written::total       26949538                       # Number of bytes written to this memory
+testsys.mem_ctrls.num_reads::cpu.dtb.walker        10230                       # Number of read requests responded to by this memory
+testsys.mem_ctrls.num_reads::cpu.itb.walker         4935                       # Number of read requests responded to by this memory
+testsys.mem_ctrls.num_reads::cpu.inst        50681979                       # Number of read requests responded to by this memory
+testsys.mem_ctrls.num_reads::cpu.data        11444131                       # Number of read requests responded to by this memory
+testsys.mem_ctrls.num_reads::realview.apollondev         1500                       # Number of read requests responded to by this memory
+testsys.mem_ctrls.num_reads::realview.ethernet           25                       # Number of read requests responded to by this memory
+testsys.mem_ctrls.num_reads::realview.ide          273                       # Number of read requests responded to by this memory
+testsys.mem_ctrls.num_reads::total           62143073                       # Number of read requests responded to by this memory
+testsys.mem_ctrls.num_writes::cpu.data        6731560                       # Number of write requests responded to by this memory
+testsys.mem_ctrls.num_writes::realview.apollondev          100                       # Number of write requests responded to by this memory
+testsys.mem_ctrls.num_writes::realview.ethernet           13                       # Number of write requests responded to by this memory
+testsys.mem_ctrls.num_writes::realview.ide          448                       # Number of write requests responded to by this memory
+testsys.mem_ctrls.num_writes::total           6732121                       # Number of write requests responded to by this memory
+testsys.mem_ctrls.bw_read::cpu.dtb.walker        11716                       # Total read bandwidth from this memory (bytes/s)
+testsys.mem_ctrls.bw_read::cpu.itb.walker         5652                       # Total read bandwidth from this memory (bytes/s)
+testsys.mem_ctrls.bw_read::cpu.inst          58045242                       # Total read bandwidth from this memory (bytes/s)
+testsys.mem_ctrls.bw_read::cpu.data          15932885                       # Total read bandwidth from this memory (bytes/s)
+testsys.mem_ctrls.bw_read::realview.apollondev        26342                       # Total read bandwidth from this memory (bytes/s)
+testsys.mem_ctrls.bw_read::realview.ethernet          237                       # Total read bandwidth from this memory (bytes/s)
+testsys.mem_ctrls.bw_read::realview.ide          4473                       # Total read bandwidth from this memory (bytes/s)
+testsys.mem_ctrls.bw_read::total             74026547                       # Total read bandwidth from this memory (bytes/s)
+testsys.mem_ctrls.bw_inst_read::cpu.inst     58045242                       # Instruction read bandwidth from this memory (bytes/s)
+testsys.mem_ctrls.bw_inst_read::total        58045242                       # Instruction read bandwidth from this memory (bytes/s)
+testsys.mem_ctrls.bw_write::cpu.data          7707687                       # Write bandwidth from this memory (bytes/s)
+testsys.mem_ctrls.bw_write::realview.apollondev          229                       # Write bandwidth from this memory (bytes/s)
+testsys.mem_ctrls.bw_write::realview.ethernet           91                       # Write bandwidth from this memory (bytes/s)
+testsys.mem_ctrls.bw_write::realview.ide         8209                       # Write bandwidth from this memory (bytes/s)
+testsys.mem_ctrls.bw_write::total             7716216                       # Write bandwidth from this memory (bytes/s)
+testsys.mem_ctrls.bw_total::cpu.dtb.walker        11716                       # Total bandwidth to/from this memory (bytes/s)
+testsys.mem_ctrls.bw_total::cpu.itb.walker         5652                       # Total bandwidth to/from this memory (bytes/s)
+testsys.mem_ctrls.bw_total::cpu.inst         58045242                       # Total bandwidth to/from this memory (bytes/s)
+testsys.mem_ctrls.bw_total::cpu.data         23640572                       # Total bandwidth to/from this memory (bytes/s)
+testsys.mem_ctrls.bw_total::realview.apollondev        26571                       # Total bandwidth to/from this memory (bytes/s)
+testsys.mem_ctrls.bw_total::realview.ethernet          328                       # Total bandwidth to/from this memory (bytes/s)
+testsys.mem_ctrls.bw_total::realview.ide        12683                       # Total bandwidth to/from this memory (bytes/s)
+testsys.mem_ctrls.bw_total::total            81742764                       # Total bandwidth to/from this memory (bytes/s)
+testsys.mem_ctrls.readReqs                          0                       # Number of read requests accepted
+testsys.mem_ctrls.writeReqs                         0                       # Number of write requests accepted
+testsys.mem_ctrls.readBursts                        0                       # Number of DRAM read bursts, including those serviced by the write queue
+testsys.mem_ctrls.writeBursts                       0                       # Number of DRAM write bursts, including those merged in the write queue
+testsys.mem_ctrls.bytesReadDRAM                     0                       # Total number of bytes read from DRAM
+testsys.mem_ctrls.bytesReadWrQ                      0                       # Total number of bytes read from write queue
+testsys.mem_ctrls.bytesWritten                      0                       # Total number of bytes written to DRAM
+testsys.mem_ctrls.bytesReadSys                      0                       # Total read bytes from the system interface side
+testsys.mem_ctrls.bytesWrittenSys                   0                       # Total written bytes from the system interface side
+testsys.mem_ctrls.servicedByWrQ                     0                       # Number of DRAM read bursts serviced by the write queue
+testsys.mem_ctrls.mergedWrBursts                    0                       # Number of DRAM write bursts merged with an existing one
+testsys.mem_ctrls.neitherReadNorWriteReqs            0                       # Number of requests that are neither read nor write
+testsys.mem_ctrls.perBankRdBursts::0                0                       # Per bank write bursts
+testsys.mem_ctrls.perBankRdBursts::1                0                       # Per bank write bursts
+testsys.mem_ctrls.perBankRdBursts::2                0                       # Per bank write bursts
+testsys.mem_ctrls.perBankRdBursts::3                0                       # Per bank write bursts
+testsys.mem_ctrls.perBankRdBursts::4                0                       # Per bank write bursts
+testsys.mem_ctrls.perBankRdBursts::5                0                       # Per bank write bursts
+testsys.mem_ctrls.perBankRdBursts::6                0                       # Per bank write bursts
+testsys.mem_ctrls.perBankRdBursts::7                0                       # Per bank write bursts
+testsys.mem_ctrls.perBankRdBursts::8                0                       # Per bank write bursts
+testsys.mem_ctrls.perBankRdBursts::9                0                       # Per bank write bursts
+testsys.mem_ctrls.perBankRdBursts::10               0                       # Per bank write bursts
+testsys.mem_ctrls.perBankRdBursts::11               0                       # Per bank write bursts
+testsys.mem_ctrls.perBankRdBursts::12               0                       # Per bank write bursts
+testsys.mem_ctrls.perBankRdBursts::13               0                       # Per bank write bursts
+testsys.mem_ctrls.perBankRdBursts::14               0                       # Per bank write bursts
+testsys.mem_ctrls.perBankRdBursts::15               0                       # Per bank write bursts
+testsys.mem_ctrls.perBankWrBursts::0                0                       # Per bank write bursts
+testsys.mem_ctrls.perBankWrBursts::1                0                       # Per bank write bursts
+testsys.mem_ctrls.perBankWrBursts::2                0                       # Per bank write bursts
+testsys.mem_ctrls.perBankWrBursts::3                0                       # Per bank write bursts
+testsys.mem_ctrls.perBankWrBursts::4                0                       # Per bank write bursts
+testsys.mem_ctrls.perBankWrBursts::5                0                       # Per bank write bursts
+testsys.mem_ctrls.perBankWrBursts::6                0                       # Per bank write bursts
+testsys.mem_ctrls.perBankWrBursts::7                0                       # Per bank write bursts
+testsys.mem_ctrls.perBankWrBursts::8                0                       # Per bank write bursts
+testsys.mem_ctrls.perBankWrBursts::9                0                       # Per bank write bursts
+testsys.mem_ctrls.perBankWrBursts::10               0                       # Per bank write bursts
+testsys.mem_ctrls.perBankWrBursts::11               0                       # Per bank write bursts
+testsys.mem_ctrls.perBankWrBursts::12               0                       # Per bank write bursts
+testsys.mem_ctrls.perBankWrBursts::13               0                       # Per bank write bursts
+testsys.mem_ctrls.perBankWrBursts::14               0                       # Per bank write bursts
+testsys.mem_ctrls.perBankWrBursts::15               0                       # Per bank write bursts
+testsys.mem_ctrls.numRdRetry                        0                       # Number of times read queue was full causing retry
+testsys.mem_ctrls.numWrRetry                        0                       # Number of times write queue was full causing retry
+testsys.mem_ctrls.totGap                            0                       # Total gap between requests
+testsys.mem_ctrls.readPktSize::0                    0                       # Read request sizes (log2)
+testsys.mem_ctrls.readPktSize::1                    0                       # Read request sizes (log2)
+testsys.mem_ctrls.readPktSize::2                    0                       # Read request sizes (log2)
+testsys.mem_ctrls.readPktSize::3                    0                       # Read request sizes (log2)
+testsys.mem_ctrls.readPktSize::4                    0                       # Read request sizes (log2)
+testsys.mem_ctrls.readPktSize::5                    0                       # Read request sizes (log2)
+testsys.mem_ctrls.readPktSize::6                    0                       # Read request sizes (log2)
+testsys.mem_ctrls.writePktSize::0                   0                       # Write request sizes (log2)
+testsys.mem_ctrls.writePktSize::1                   0                       # Write request sizes (log2)
+testsys.mem_ctrls.writePktSize::2                   0                       # Write request sizes (log2)
+testsys.mem_ctrls.writePktSize::3                   0                       # Write request sizes (log2)
+testsys.mem_ctrls.writePktSize::4                   0                       # Write request sizes (log2)
+testsys.mem_ctrls.writePktSize::5                   0                       # Write request sizes (log2)
+testsys.mem_ctrls.writePktSize::6                   0                       # Write request sizes (log2)
+testsys.mem_ctrls.rdQLenPdf::0                      0                       # What read queue length does an incoming req see
+testsys.mem_ctrls.rdQLenPdf::1                      0                       # What read queue length does an incoming req see
+testsys.mem_ctrls.rdQLenPdf::2                      0                       # What read queue length does an incoming req see
+testsys.mem_ctrls.rdQLenPdf::3                      0                       # What read queue length does an incoming req see
+testsys.mem_ctrls.rdQLenPdf::4                      0                       # What read queue length does an incoming req see
+testsys.mem_ctrls.rdQLenPdf::5                      0                       # What read queue length does an incoming req see
+testsys.mem_ctrls.rdQLenPdf::6                      0                       # What read queue length does an incoming req see
+testsys.mem_ctrls.rdQLenPdf::7                      0                       # What read queue length does an incoming req see
+testsys.mem_ctrls.rdQLenPdf::8                      0                       # What read queue length does an incoming req see
+testsys.mem_ctrls.rdQLenPdf::9                      0                       # What read queue length does an incoming req see
+testsys.mem_ctrls.rdQLenPdf::10                     0                       # What read queue length does an incoming req see
+testsys.mem_ctrls.rdQLenPdf::11                     0                       # What read queue length does an incoming req see
+testsys.mem_ctrls.rdQLenPdf::12                     0                       # What read queue length does an incoming req see
+testsys.mem_ctrls.rdQLenPdf::13                     0                       # What read queue length does an incoming req see
+testsys.mem_ctrls.rdQLenPdf::14                     0                       # What read queue length does an incoming req see
+testsys.mem_ctrls.rdQLenPdf::15                     0                       # What read queue length does an incoming req see
+testsys.mem_ctrls.rdQLenPdf::16                     0                       # What read queue length does an incoming req see
+testsys.mem_ctrls.rdQLenPdf::17                     0                       # What read queue length does an incoming req see
+testsys.mem_ctrls.rdQLenPdf::18                     0                       # What read queue length does an incoming req see
+testsys.mem_ctrls.rdQLenPdf::19                     0                       # What read queue length does an incoming req see
+testsys.mem_ctrls.rdQLenPdf::20                     0                       # What read queue length does an incoming req see
+testsys.mem_ctrls.rdQLenPdf::21                     0                       # What read queue length does an incoming req see
+testsys.mem_ctrls.rdQLenPdf::22                     0                       # What read queue length does an incoming req see
+testsys.mem_ctrls.rdQLenPdf::23                     0                       # What read queue length does an incoming req see
+testsys.mem_ctrls.rdQLenPdf::24                     0                       # What read queue length does an incoming req see
+testsys.mem_ctrls.rdQLenPdf::25                     0                       # What read queue length does an incoming req see
+testsys.mem_ctrls.rdQLenPdf::26                     0                       # What read queue length does an incoming req see
+testsys.mem_ctrls.rdQLenPdf::27                     0                       # What read queue length does an incoming req see
+testsys.mem_ctrls.rdQLenPdf::28                     0                       # What read queue length does an incoming req see
+testsys.mem_ctrls.rdQLenPdf::29                     0                       # What read queue length does an incoming req see
+testsys.mem_ctrls.rdQLenPdf::30                     0                       # What read queue length does an incoming req see
+testsys.mem_ctrls.rdQLenPdf::31                     0                       # What read queue length does an incoming req see
+testsys.mem_ctrls.wrQLenPdf::0                      0                       # What write queue length does an incoming req see
+testsys.mem_ctrls.wrQLenPdf::1                      0                       # What write queue length does an incoming req see
+testsys.mem_ctrls.wrQLenPdf::2                      0                       # What write queue length does an incoming req see
+testsys.mem_ctrls.wrQLenPdf::3                      0                       # What write queue length does an incoming req see
+testsys.mem_ctrls.wrQLenPdf::4                      0                       # What write queue length does an incoming req see
+testsys.mem_ctrls.wrQLenPdf::5                      0                       # What write queue length does an incoming req see
+testsys.mem_ctrls.wrQLenPdf::6                      0                       # What write queue length does an incoming req see
+testsys.mem_ctrls.wrQLenPdf::7                      0                       # What write queue length does an incoming req see
+testsys.mem_ctrls.wrQLenPdf::8                      0                       # What write queue length does an incoming req see
+testsys.mem_ctrls.wrQLenPdf::9                      0                       # What write queue length does an incoming req see
+testsys.mem_ctrls.wrQLenPdf::10                     0                       # What write queue length does an incoming req see
+testsys.mem_ctrls.wrQLenPdf::11                     0                       # What write queue length does an incoming req see
+testsys.mem_ctrls.wrQLenPdf::12                     0                       # What write queue length does an incoming req see
+testsys.mem_ctrls.wrQLenPdf::13                     0                       # What write queue length does an incoming req see
+testsys.mem_ctrls.wrQLenPdf::14                     0                       # What write queue length does an incoming req see
+testsys.mem_ctrls.wrQLenPdf::15                     0                       # What write queue length does an incoming req see
+testsys.mem_ctrls.wrQLenPdf::16                     0                       # What write queue length does an incoming req see
+testsys.mem_ctrls.wrQLenPdf::17                     0                       # What write queue length does an incoming req see
+testsys.mem_ctrls.wrQLenPdf::18                     0                       # What write queue length does an incoming req see
+testsys.mem_ctrls.wrQLenPdf::19                     0                       # What write queue length does an incoming req see
+testsys.mem_ctrls.wrQLenPdf::20                     0                       # What write queue length does an incoming req see
+testsys.mem_ctrls.wrQLenPdf::21                     0                       # What write queue length does an incoming req see
+testsys.mem_ctrls.wrQLenPdf::22                     0                       # What write queue length does an incoming req see
+testsys.mem_ctrls.wrQLenPdf::23                     0                       # What write queue length does an incoming req see
+testsys.mem_ctrls.wrQLenPdf::24                     0                       # What write queue length does an incoming req see
+testsys.mem_ctrls.wrQLenPdf::25                     0                       # What write queue length does an incoming req see
+testsys.mem_ctrls.wrQLenPdf::26                     0                       # What write queue length does an incoming req see
+testsys.mem_ctrls.wrQLenPdf::27                     0                       # What write queue length does an incoming req see
+testsys.mem_ctrls.wrQLenPdf::28                     0                       # What write queue length does an incoming req see
+testsys.mem_ctrls.wrQLenPdf::29                     0                       # What write queue length does an incoming req see
+testsys.mem_ctrls.wrQLenPdf::30                     0                       # What write queue length does an incoming req see
+testsys.mem_ctrls.wrQLenPdf::31                     0                       # What write queue length does an incoming req see
+testsys.mem_ctrls.wrQLenPdf::32                     0                       # What write queue length does an incoming req see
+testsys.mem_ctrls.wrQLenPdf::33                     0                       # What write queue length does an incoming req see
+testsys.mem_ctrls.wrQLenPdf::34                     0                       # What write queue length does an incoming req see
+testsys.mem_ctrls.wrQLenPdf::35                     0                       # What write queue length does an incoming req see
+testsys.mem_ctrls.wrQLenPdf::36                     0                       # What write queue length does an incoming req see
+testsys.mem_ctrls.wrQLenPdf::37                     0                       # What write queue length does an incoming req see
+testsys.mem_ctrls.wrQLenPdf::38                     0                       # What write queue length does an incoming req see
+testsys.mem_ctrls.wrQLenPdf::39                     0                       # What write queue length does an incoming req see
+testsys.mem_ctrls.wrQLenPdf::40                     0                       # What write queue length does an incoming req see
+testsys.mem_ctrls.wrQLenPdf::41                     0                       # What write queue length does an incoming req see
+testsys.mem_ctrls.wrQLenPdf::42                     0                       # What write queue length does an incoming req see
+testsys.mem_ctrls.wrQLenPdf::43                     0                       # What write queue length does an incoming req see
+testsys.mem_ctrls.wrQLenPdf::44                     0                       # What write queue length does an incoming req see
+testsys.mem_ctrls.wrQLenPdf::45                     0                       # What write queue length does an incoming req see
+testsys.mem_ctrls.wrQLenPdf::46                     0                       # What write queue length does an incoming req see
+testsys.mem_ctrls.wrQLenPdf::47                     0                       # What write queue length does an incoming req see
+testsys.mem_ctrls.wrQLenPdf::48                     0                       # What write queue length does an incoming req see
+testsys.mem_ctrls.wrQLenPdf::49                     0                       # What write queue length does an incoming req see
+testsys.mem_ctrls.wrQLenPdf::50                     0                       # What write queue length does an incoming req see
+testsys.mem_ctrls.wrQLenPdf::51                     0                       # What write queue length does an incoming req see
+testsys.mem_ctrls.wrQLenPdf::52                     0                       # What write queue length does an incoming req see
+testsys.mem_ctrls.wrQLenPdf::53                     0                       # What write queue length does an incoming req see
+testsys.mem_ctrls.wrQLenPdf::54                     0                       # What write queue length does an incoming req see
+testsys.mem_ctrls.wrQLenPdf::55                     0                       # What write queue length does an incoming req see
+testsys.mem_ctrls.wrQLenPdf::56                     0                       # What write queue length does an incoming req see
+testsys.mem_ctrls.wrQLenPdf::57                     0                       # What write queue length does an incoming req see
+testsys.mem_ctrls.wrQLenPdf::58                     0                       # What write queue length does an incoming req see
+testsys.mem_ctrls.wrQLenPdf::59                     0                       # What write queue length does an incoming req see
+testsys.mem_ctrls.wrQLenPdf::60                     0                       # What write queue length does an incoming req see
+testsys.mem_ctrls.wrQLenPdf::61                     0                       # What write queue length does an incoming req see
+testsys.mem_ctrls.wrQLenPdf::62                     0                       # What write queue length does an incoming req see
+testsys.mem_ctrls.wrQLenPdf::63                     0                       # What write queue length does an incoming req see
+testsys.mem_ctrls.totQLat                           0                       # Total ticks spent queuing
+testsys.mem_ctrls.totMemAccLat                      0                       # Total ticks spent from burst creation until serviced by the DRAM
+testsys.mem_ctrls.totBusLat                         0                       # Total ticks spent in databus transfers
+testsys.mem_ctrls.avgQLat                         nan                       # Average queueing delay per DRAM burst
+testsys.mem_ctrls.avgBusLat                       nan                       # Average bus latency per DRAM burst
+testsys.mem_ctrls.avgMemAccLat                    nan                       # Average memory access latency per DRAM burst
+testsys.mem_ctrls.avgRdBW                        0.00                       # Average DRAM read bandwidth in MiByte/s
+testsys.mem_ctrls.avgWrBW                        0.00                       # Average achieved write bandwidth in MiByte/s
+testsys.mem_ctrls.avgRdBWSys                     0.00                       # Average system read bandwidth in MiByte/s
+testsys.mem_ctrls.avgWrBWSys                     0.00                       # Average system write bandwidth in MiByte/s
+testsys.mem_ctrls.peakBW                     12800.00                       # Theoretical peak bandwidth in MiByte/s
+testsys.mem_ctrls.busUtil                        0.00                       # Data bus utilization in percentage
+testsys.mem_ctrls.busUtilRead                    0.00                       # Data bus utilization in percentage for reads
+testsys.mem_ctrls.busUtilWrite                   0.00                       # Data bus utilization in percentage for writes
+testsys.mem_ctrls.avgRdQLen                      0.00                       # Average read queue length when enqueuing
+testsys.mem_ctrls.avgWrQLen                      0.00                       # Average write queue length when enqueuing
+testsys.mem_ctrls.readRowHits                       0                       # Number of row buffer hits during reads
+testsys.mem_ctrls.writeRowHits                      0                       # Number of row buffer hits during writes
+testsys.mem_ctrls.readRowHitRate                  nan                       # Row buffer hit rate for reads
+testsys.mem_ctrls.writeRowHitRate                 nan                       # Row buffer hit rate for writes
+testsys.mem_ctrls.avgGap                          nan                       # Average gap between requests
+testsys.mem_ctrls.pageHitRate                     nan                       # Row buffer hit rate, read and write combined
+testsys.mem_ctrls_0.actEnergy                       0                       # Energy for activate commands per rank (pJ)
+testsys.mem_ctrls_0.preEnergy                       0                       # Energy for precharge commands per rank (pJ)
+testsys.mem_ctrls_0.readEnergy                      0                       # Energy for read commands per rank (pJ)
+testsys.mem_ctrls_0.writeEnergy                     0                       # Energy for write commands per rank (pJ)
+testsys.mem_ctrls_0.refreshEnergy                   0                       # Energy for refresh commands per rank (pJ)
+testsys.mem_ctrls_0.actBackEnergy                   0                       # Energy for active background per rank (pJ)
+testsys.mem_ctrls_0.preBackEnergy        2412420566400                       # Energy for precharge background per rank (pJ)
+testsys.mem_ctrls_0.actPowerDownEnergy              0                       # Energy for active power-down per rank (pJ)
+testsys.mem_ctrls_0.prePowerDownEnergy              0                       # Energy for precharge power-down per rank (pJ)
+testsys.mem_ctrls_0.selfRefreshEnergy               0                       # Energy for self refresh per rank (pJ)
+testsys.mem_ctrls_0.totalEnergy          2412420566400                       # Total energy per rank (pJ)
+testsys.mem_ctrls_0.averagePower                  384                       # Core power per rank (mW)
+testsys.mem_ctrls_0.totalIdleTime                   0                       # Total Idle time Per DRAM Rank
+testsys.mem_ctrls_0.memoryStateTime::IDLE 6282345225000                       # Time in different power states
+testsys.mem_ctrls_0.memoryStateTime::REF            0                       # Time in different power states
+testsys.mem_ctrls_0.memoryStateTime::SREF            0                       # Time in different power states
+testsys.mem_ctrls_0.memoryStateTime::PRE_PDN            0                       # Time in different power states
+testsys.mem_ctrls_0.memoryStateTime::ACT            0                       # Time in different power states
+testsys.mem_ctrls_0.memoryStateTime::ACT_PDN            0                       # Time in different power states
+testsys.mem_ctrls_1.actEnergy                       0                       # Energy for activate commands per rank (pJ)
+testsys.mem_ctrls_1.preEnergy                       0                       # Energy for precharge commands per rank (pJ)
+testsys.mem_ctrls_1.readEnergy                      0                       # Energy for read commands per rank (pJ)
+testsys.mem_ctrls_1.writeEnergy                     0                       # Energy for write commands per rank (pJ)
+testsys.mem_ctrls_1.refreshEnergy                   0                       # Energy for refresh commands per rank (pJ)
+testsys.mem_ctrls_1.actBackEnergy                   0                       # Energy for active background per rank (pJ)
+testsys.mem_ctrls_1.preBackEnergy        2412420566400                       # Energy for precharge background per rank (pJ)
+testsys.mem_ctrls_1.actPowerDownEnergy              0                       # Energy for active power-down per rank (pJ)
+testsys.mem_ctrls_1.prePowerDownEnergy              0                       # Energy for precharge power-down per rank (pJ)
+testsys.mem_ctrls_1.selfRefreshEnergy               0                       # Energy for self refresh per rank (pJ)
+testsys.mem_ctrls_1.totalEnergy          2412420566400                       # Total energy per rank (pJ)
+testsys.mem_ctrls_1.averagePower                  384                       # Core power per rank (mW)
+testsys.mem_ctrls_1.totalIdleTime                   0                       # Total Idle time Per DRAM Rank
+testsys.mem_ctrls_1.memoryStateTime::IDLE 6282345225000                       # Time in different power states
+testsys.mem_ctrls_1.memoryStateTime::REF            0                       # Time in different power states
+testsys.mem_ctrls_1.memoryStateTime::SREF            0                       # Time in different power states
+testsys.mem_ctrls_1.memoryStateTime::PRE_PDN            0                       # Time in different power states
+testsys.mem_ctrls_1.memoryStateTime::ACT            0                       # Time in different power states
+testsys.mem_ctrls_1.memoryStateTime::ACT_PDN            0                       # Time in different power states
+testsys.realview.nvmem.pwrStateResidencyTicks::UNDEFINED 6282345225000                       # Cumulative time (in ticks) in various power states
+testsys.realview.vram.pwrStateResidencyTicks::UNDEFINED 6282345225000                       # Cumulative time (in ticks) in various power states
+testsys.pwrStateResidencyTicks::UNDEFINED 6282345225000                       # Cumulative time (in ticks) in various power states
+testsys.bridge.pwrStateResidencyTicks::UNDEFINED 6282345225000                       # Cumulative time (in ticks) in various power states
+testsys.cf0.dma_read_full_pages                     0                       # Number of full page size DMA reads (not PRD).
+testsys.cf0.dma_read_bytes                      15360                       # Number of bytes transfered via DMA reads (not PRD).
+testsys.cf0.dma_read_txs                           15                       # Number of DMA read transactions (not PRD).
+testsys.cf0.dma_write_full_pages                    3                       # Number of full page size DMA writes.
+testsys.cf0.dma_write_bytes                     28672                       # Number of bytes transfered via DMA writes.
+testsys.cf0.dma_write_txs                          18                       # Number of DMA write transactions.
+testsys.cpu_voltage_domain.voltage                  1                       # Voltage in Volts
+testsys.cpu_clk_domain.clock                      500                       # Clock period in ticks
+testsys.cpu.dstage2_mmu.stage2_tlb.walker.pwrStateResidencyTicks::UNDEFINED 6282345225000                       # Cumulative time (in ticks) in various power states
+testsys.cpu.dstage2_mmu.stage2_tlb.walker.walks            0                       # Table walker walks requested
+testsys.cpu.dstage2_mmu.stage2_tlb.walker.walkRequestOrigin_Requested::Data            0                       # Table walker requests started/completed, data/inst
+testsys.cpu.dstage2_mmu.stage2_tlb.walker.walkRequestOrigin_Requested::Inst            0                       # Table walker requests started/completed, data/inst
+testsys.cpu.dstage2_mmu.stage2_tlb.walker.walkRequestOrigin_Requested::total            0                       # Table walker requests started/completed, data/inst
+testsys.cpu.dstage2_mmu.stage2_tlb.walker.walkRequestOrigin_Completed::Data            0                       # Table walker requests started/completed, data/inst
+testsys.cpu.dstage2_mmu.stage2_tlb.walker.walkRequestOrigin_Completed::Inst            0                       # Table walker requests started/completed, data/inst
+testsys.cpu.dstage2_mmu.stage2_tlb.walker.walkRequestOrigin_Completed::total            0                       # Table walker requests started/completed, data/inst
+testsys.cpu.dstage2_mmu.stage2_tlb.walker.walkRequestOrigin::total            0                       # Table walker requests started/completed, data/inst
+testsys.cpu.dstage2_mmu.stage2_tlb.inst_hits            0                       # ITB inst hits
+testsys.cpu.dstage2_mmu.stage2_tlb.inst_misses            0                       # ITB inst misses
+testsys.cpu.dstage2_mmu.stage2_tlb.read_hits            0                       # DTB read hits
+testsys.cpu.dstage2_mmu.stage2_tlb.read_misses            0                       # DTB read misses
+testsys.cpu.dstage2_mmu.stage2_tlb.write_hits            0                       # DTB write hits
+testsys.cpu.dstage2_mmu.stage2_tlb.write_misses            0                       # DTB write misses
+testsys.cpu.dstage2_mmu.stage2_tlb.flush_tlb            0                       # Number of times complete TLB was flushed
+testsys.cpu.dstage2_mmu.stage2_tlb.flush_tlb_mva            0                       # Number of times TLB was flushed by MVA
+testsys.cpu.dstage2_mmu.stage2_tlb.flush_tlb_mva_asid            0                       # Number of times TLB was flushed by MVA & ASID
+testsys.cpu.dstage2_mmu.stage2_tlb.flush_tlb_asid            0                       # Number of times TLB was flushed by ASID
+testsys.cpu.dstage2_mmu.stage2_tlb.flush_entries            0                       # Number of entries that have been flushed from TLB
+testsys.cpu.dstage2_mmu.stage2_tlb.align_faults            0                       # Number of TLB faults due to alignment restrictions
+testsys.cpu.dstage2_mmu.stage2_tlb.prefetch_faults            0                       # Number of TLB faults due to prefetch
+testsys.cpu.dstage2_mmu.stage2_tlb.domain_faults            0                       # Number of TLB faults due to domain restrictions
+testsys.cpu.dstage2_mmu.stage2_tlb.perms_faults            0                       # Number of TLB faults due to permissions restrictions
+testsys.cpu.dstage2_mmu.stage2_tlb.read_accesses            0                       # DTB read accesses
+testsys.cpu.dstage2_mmu.stage2_tlb.write_accesses            0                       # DTB write accesses
+testsys.cpu.dstage2_mmu.stage2_tlb.inst_accesses            0                       # ITB inst accesses
+testsys.cpu.dstage2_mmu.stage2_tlb.hits             0                       # DTB hits
+testsys.cpu.dstage2_mmu.stage2_tlb.misses            0                       # DTB misses
+testsys.cpu.dstage2_mmu.stage2_tlb.accesses            0                       # DTB accesses
+testsys.cpu.dtb.walker.pwrStateResidencyTicks::UNDEFINED 6282345225000                       # Cumulative time (in ticks) in various power states
+testsys.cpu.dtb.walker.walks                     5509                       # Table walker walks requested
+testsys.cpu.dtb.walker.walksShort                5509                       # Table walker walks initiated with short descriptors
+testsys.cpu.dtb.walker.walkWaitTime::samples         5509                       # Table walker wait (enqueue to first request) latency
+testsys.cpu.dtb.walker.walkWaitTime::0           5509    100.00%    100.00% # Table walker wait (enqueue to first request) latency
+testsys.cpu.dtb.walker.walkWaitTime::total         5509                       # Table walker wait (enqueue to first request) latency
+testsys.cpu.dtb.walker.walkPageSizes::4K         3796     83.21%     83.21% # Table walker page sizes translated
+testsys.cpu.dtb.walker.walkPageSizes::1M          766     16.79%    100.00% # Table walker page sizes translated
+testsys.cpu.dtb.walker.walkPageSizes::total         4562                       # Table walker page sizes translated
+testsys.cpu.dtb.walker.walkRequestOrigin_Requested::Data         5509                       # Table walker requests started/completed, data/inst
+testsys.cpu.dtb.walker.walkRequestOrigin_Requested::Inst            0                       # Table walker requests started/completed, data/inst
+testsys.cpu.dtb.walker.walkRequestOrigin_Requested::total         5509                       # Table walker requests started/completed, data/inst
+testsys.cpu.dtb.walker.walkRequestOrigin_Completed::Data         4562                       # Table walker requests started/completed, data/inst
+testsys.cpu.dtb.walker.walkRequestOrigin_Completed::Inst            0                       # Table walker requests started/completed, data/inst
+testsys.cpu.dtb.walker.walkRequestOrigin_Completed::total         4562                       # Table walker requests started/completed, data/inst
+testsys.cpu.dtb.walker.walkRequestOrigin::total        10071                       # Table walker requests started/completed, data/inst
+testsys.cpu.dtb.inst_hits                           0                       # ITB inst hits
+testsys.cpu.dtb.inst_misses                         0                       # ITB inst misses
+testsys.cpu.dtb.read_hits                    11444887                       # DTB read hits
+testsys.cpu.dtb.read_misses                      4865                       # DTB read misses
+testsys.cpu.dtb.write_hits                    6743840                       # DTB write hits
+testsys.cpu.dtb.write_misses                      644                       # DTB write misses
+testsys.cpu.dtb.flush_tlb                          27                       # Number of times complete TLB was flushed
+testsys.cpu.dtb.flush_tlb_mva                     368                       # Number of times TLB was flushed by MVA
+testsys.cpu.dtb.flush_tlb_mva_asid                  0                       # Number of times TLB was flushed by MVA & ASID
+testsys.cpu.dtb.flush_tlb_asid                      0                       # Number of times TLB was flushed by ASID
+testsys.cpu.dtb.flush_entries                    1919                       # Number of entries that have been flushed from TLB
+testsys.cpu.dtb.align_faults                        0                       # Number of TLB faults due to alignment restrictions
+testsys.cpu.dtb.prefetch_faults                   253                       # Number of TLB faults due to prefetch
+testsys.cpu.dtb.domain_faults                       0                       # Number of TLB faults due to domain restrictions
+testsys.cpu.dtb.perms_faults                      188                       # Number of TLB faults due to permissions restrictions
+testsys.cpu.dtb.read_accesses                11449752                       # DTB read accesses
+testsys.cpu.dtb.write_accesses                6744484                       # DTB write accesses
+testsys.cpu.dtb.inst_accesses                       0                       # ITB inst accesses
+testsys.cpu.dtb.hits                         18188727                       # DTB hits
+testsys.cpu.dtb.misses                           5509                       # DTB misses
+testsys.cpu.dtb.accesses                     18194236                       # DTB accesses
+testsys.cpu.istage2_mmu.stage2_tlb.walker.pwrStateResidencyTicks::UNDEFINED 6282345225000                       # Cumulative time (in ticks) in various power states
+testsys.cpu.istage2_mmu.stage2_tlb.walker.walks            0                       # Table walker walks requested
+testsys.cpu.istage2_mmu.stage2_tlb.walker.walkRequestOrigin_Requested::Data            0                       # Table walker requests started/completed, data/inst
+testsys.cpu.istage2_mmu.stage2_tlb.walker.walkRequestOrigin_Requested::Inst            0                       # Table walker requests started/completed, data/inst
+testsys.cpu.istage2_mmu.stage2_tlb.walker.walkRequestOrigin_Requested::total            0                       # Table walker requests started/completed, data/inst
+testsys.cpu.istage2_mmu.stage2_tlb.walker.walkRequestOrigin_Completed::Data            0                       # Table walker requests started/completed, data/inst
+testsys.cpu.istage2_mmu.stage2_tlb.walker.walkRequestOrigin_Completed::Inst            0                       # Table walker requests started/completed, data/inst
+testsys.cpu.istage2_mmu.stage2_tlb.walker.walkRequestOrigin_Completed::total            0                       # Table walker requests started/completed, data/inst
+testsys.cpu.istage2_mmu.stage2_tlb.walker.walkRequestOrigin::total            0                       # Table walker requests started/completed, data/inst
+testsys.cpu.istage2_mmu.stage2_tlb.inst_hits            0                       # ITB inst hits
+testsys.cpu.istage2_mmu.stage2_tlb.inst_misses            0                       # ITB inst misses
+testsys.cpu.istage2_mmu.stage2_tlb.read_hits            0                       # DTB read hits
+testsys.cpu.istage2_mmu.stage2_tlb.read_misses            0                       # DTB read misses
+testsys.cpu.istage2_mmu.stage2_tlb.write_hits            0                       # DTB write hits
+testsys.cpu.istage2_mmu.stage2_tlb.write_misses            0                       # DTB write misses
+testsys.cpu.istage2_mmu.stage2_tlb.flush_tlb            0                       # Number of times complete TLB was flushed
+testsys.cpu.istage2_mmu.stage2_tlb.flush_tlb_mva            0                       # Number of times TLB was flushed by MVA
+testsys.cpu.istage2_mmu.stage2_tlb.flush_tlb_mva_asid            0                       # Number of times TLB was flushed by MVA & ASID
+testsys.cpu.istage2_mmu.stage2_tlb.flush_tlb_asid            0                       # Number of times TLB was flushed by ASID
+testsys.cpu.istage2_mmu.stage2_tlb.flush_entries            0                       # Number of entries that have been flushed from TLB
+testsys.cpu.istage2_mmu.stage2_tlb.align_faults            0                       # Number of TLB faults due to alignment restrictions
+testsys.cpu.istage2_mmu.stage2_tlb.prefetch_faults            0                       # Number of TLB faults due to prefetch
+testsys.cpu.istage2_mmu.stage2_tlb.domain_faults            0                       # Number of TLB faults due to domain restrictions
+testsys.cpu.istage2_mmu.stage2_tlb.perms_faults            0                       # Number of TLB faults due to permissions restrictions
+testsys.cpu.istage2_mmu.stage2_tlb.read_accesses            0                       # DTB read accesses
+testsys.cpu.istage2_mmu.stage2_tlb.write_accesses            0                       # DTB write accesses
+testsys.cpu.istage2_mmu.stage2_tlb.inst_accesses            0                       # ITB inst accesses
+testsys.cpu.istage2_mmu.stage2_tlb.hits             0                       # DTB hits
+testsys.cpu.istage2_mmu.stage2_tlb.misses            0                       # DTB misses
+testsys.cpu.istage2_mmu.stage2_tlb.accesses            0                       # DTB accesses
+testsys.cpu.itb.walker.pwrStateResidencyTicks::UNDEFINED 6282345225000                       # Cumulative time (in ticks) in various power states
+testsys.cpu.itb.walker.walks                     2537                       # Table walker walks requested
+testsys.cpu.itb.walker.walksShort                2537                       # Table walker walks initiated with short descriptors
+testsys.cpu.itb.walker.walkWaitTime::samples         2537                       # Table walker wait (enqueue to first request) latency
+testsys.cpu.itb.walker.walkWaitTime::0           2537    100.00%    100.00% # Table walker wait (enqueue to first request) latency
+testsys.cpu.itb.walker.walkWaitTime::total         2537                       # Table walker wait (enqueue to first request) latency
+testsys.cpu.itb.walker.walkPageSizes::4K         1544     91.74%     91.74% # Table walker page sizes translated
+testsys.cpu.itb.walker.walkPageSizes::1M          139      8.26%    100.00% # Table walker page sizes translated
+testsys.cpu.itb.walker.walkPageSizes::total         1683                       # Table walker page sizes translated
+testsys.cpu.itb.walker.walkRequestOrigin_Requested::Data            0                       # Table walker requests started/completed, data/inst
+testsys.cpu.itb.walker.walkRequestOrigin_Requested::Inst         2537                       # Table walker requests started/completed, data/inst
+testsys.cpu.itb.walker.walkRequestOrigin_Requested::total         2537                       # Table walker requests started/completed, data/inst
+testsys.cpu.itb.walker.walkRequestOrigin_Completed::Data            0                       # Table walker requests started/completed, data/inst
+testsys.cpu.itb.walker.walkRequestOrigin_Completed::Inst         1683                       # Table walker requests started/completed, data/inst
+testsys.cpu.itb.walker.walkRequestOrigin_Completed::total         1683                       # Table walker requests started/completed, data/inst
+testsys.cpu.itb.walker.walkRequestOrigin::total         4220                       # Table walker requests started/completed, data/inst
+testsys.cpu.itb.inst_hits                    50680296                       # ITB inst hits
+testsys.cpu.itb.inst_misses                      2537                       # ITB inst misses
+testsys.cpu.itb.read_hits                           0                       # DTB read hits
+testsys.cpu.itb.read_misses                         0                       # DTB read misses
+testsys.cpu.itb.write_hits                          0                       # DTB write hits
+testsys.cpu.itb.write_misses                        0                       # DTB write misses
+testsys.cpu.itb.flush_tlb                          27                       # Number of times complete TLB was flushed
+testsys.cpu.itb.flush_tlb_mva                     368                       # Number of times TLB was flushed by MVA
+testsys.cpu.itb.flush_tlb_mva_asid                  0                       # Number of times TLB was flushed by MVA & ASID
+testsys.cpu.itb.flush_tlb_asid                      0                       # Number of times TLB was flushed by ASID
+testsys.cpu.itb.flush_entries                    1409                       # Number of entries that have been flushed from TLB
+testsys.cpu.itb.align_faults                        0                       # Number of TLB faults due to alignment restrictions
+testsys.cpu.itb.prefetch_faults                     0                       # Number of TLB faults due to prefetch
+testsys.cpu.itb.domain_faults                       0                       # Number of TLB faults due to domain restrictions
+testsys.cpu.itb.perms_faults                        0                       # Number of TLB faults due to permissions restrictions
+testsys.cpu.itb.read_accesses                       0                       # DTB read accesses
+testsys.cpu.itb.write_accesses                      0                       # DTB write accesses
+testsys.cpu.itb.inst_accesses                50682833                       # ITB inst accesses
+testsys.cpu.itb.hits                         50680296                       # DTB hits
+testsys.cpu.itb.misses                           2537                       # DTB misses
+testsys.cpu.itb.accesses                     50682833                       # DTB accesses
+testsys.cpu.numPwrStateTransitions                876                       # Number of power state transitions
+testsys.cpu.pwrStateClkGateDist::samples          438                       # Distribution of time spent in the clock gated state
+testsys.cpu.pwrStateClkGateDist::mean    7903445482.264840                       # Distribution of time spent in the clock gated state
+testsys.cpu.pwrStateClkGateDist::stdev   41177443749.695839                       # Distribution of time spent in the clock gated state
+testsys.cpu.pwrStateClkGateDist::underflows          155     35.39%     35.39% # Distribution of time spent in the clock gated state
+testsys.cpu.pwrStateClkGateDist::1000-5e+10          269     61.42%     96.80% # Distribution of time spent in the clock gated state
+testsys.cpu.pwrStateClkGateDist::5e+10-1e+11            3      0.68%     97.49% # Distribution of time spent in the clock gated state
+testsys.cpu.pwrStateClkGateDist::1e+11-1.5e+11            3      0.68%     98.17% # Distribution of time spent in the clock gated state
+testsys.cpu.pwrStateClkGateDist::1.5e+11-2e+11            1      0.23%     98.40% # Distribution of time spent in the clock gated state
+testsys.cpu.pwrStateClkGateDist::2e+11-2.5e+11            4      0.91%     99.32% # Distribution of time spent in the clock gated state
+testsys.cpu.pwrStateClkGateDist::3e+11-3.5e+11            1      0.23%     99.54% # Distribution of time spent in the clock gated state
+testsys.cpu.pwrStateClkGateDist::3.5e+11-4e+11            1      0.23%     99.77% # Distribution of time spent in the clock gated state
+testsys.cpu.pwrStateClkGateDist::4.5e+11-5e+11            1      0.23%    100.00% # Distribution of time spent in the clock gated state
+testsys.cpu.pwrStateClkGateDist::min_value          501                       # Distribution of time spent in the clock gated state
+testsys.cpu.pwrStateClkGateDist::max_value 469988002452                       # Distribution of time spent in the clock gated state
+testsys.cpu.pwrStateClkGateDist::total            438                       # Distribution of time spent in the clock gated state
+testsys.cpu.pwrStateResidencyTicks::ON    31101674267                       # Cumulative time (in ticks) in various power states
+testsys.cpu.pwrStateResidencyTicks::CLK_GATED 3461709121232                       # Cumulative time (in ticks) in various power states
+testsys.cpu.numCycles                      6985169537                       # number of cpu cycles simulated
+testsys.cpu.numWorkItemsStarted                     0                       # number of work items this cpu started
+testsys.cpu.numWorkItemsCompleted                   0                       # number of work items this cpu completed
+testsys.cpu.kern.inst.arm                           0                       # number of arm instructions executed
+testsys.cpu.kern.inst.quiesce                     438                       # number of quiesce instructions executed
+testsys.cpu.committedInsts                   48036792                       # Number of instructions committed
+testsys.cpu.committedOps                     59104962                       # Number of ops (including micro ops) committed
+testsys.cpu.num_int_alu_accesses             52978841                       # Number of integer alu accesses
+testsys.cpu.num_fp_alu_accesses                 11555                       # Number of float alu accesses
+testsys.cpu.num_vec_alu_accesses                    0                       # Number of vector alu accesses
+testsys.cpu.num_func_calls                    8743748                       # number of times a function call or return occured
+testsys.cpu.num_conditional_control_insts      5758058                       # number of instructions that are conditional controls
+testsys.cpu.num_int_insts                    52978841                       # number of integer instructions
+testsys.cpu.num_fp_insts                        11555                       # number of float instructions
+testsys.cpu.num_vec_insts                           0                       # number of vector instructions
+testsys.cpu.num_int_register_reads          103036612                       # number of times the integer registers were read
+testsys.cpu.num_int_register_writes          38415974                       # number of times the integer registers were written
+testsys.cpu.num_fp_register_reads               10354                       # number of times the floating registers were read
+testsys.cpu.num_fp_register_writes               1610                       # number of times the floating registers were written
+testsys.cpu.num_vec_register_reads                  0                       # number of times the vector registers were read
+testsys.cpu.num_vec_register_writes                 0                       # number of times the vector registers were written
+testsys.cpu.num_cc_register_reads           183002157                       # number of times the CC registers were read
+testsys.cpu.num_cc_register_writes           18627874                       # number of times the CC registers were written
+testsys.cpu.num_mem_refs                     18325221                       # number of memory refs
+testsys.cpu.num_load_insts                   11500483                       # Number of load instructions
+testsys.cpu.num_store_insts                   6824738                       # Number of store instructions
+testsys.cpu.num_idle_cycles              6923418676.589975                       # Number of idle cycles
+testsys.cpu.num_busy_cycles              61750860.410025                       # Number of busy cycles
+testsys.cpu.not_idle_fraction                0.008840                       # Percentage of non-idle cycles
+testsys.cpu.idle_fraction                    0.991160                       # Percentage of idle cycles
+testsys.cpu.Branches                         14652240                       # Number of branches fetched
+testsys.cpu.op_class::No_OpClass                  115      0.00%      0.00% # Class of executed instruction
+testsys.cpu.op_class::IntAlu                 42795947     69.96%     69.96% # Class of executed instruction
+testsys.cpu.op_class::IntMult                   51241      0.08%     70.04% # Class of executed instruction
+testsys.cpu.op_class::IntDiv                        0      0.00%     70.04% # Class of executed instruction
+testsys.cpu.op_class::FloatAdd                      0      0.00%     70.04% # Class of executed instruction
+testsys.cpu.op_class::FloatCmp                      0      0.00%     70.04% # Class of executed instruction
+testsys.cpu.op_class::FloatCvt                      0      0.00%     70.04% # Class of executed instruction
+testsys.cpu.op_class::FloatMult                     0      0.00%     70.04% # Class of executed instruction
+testsys.cpu.op_class::FloatMultAcc                  0      0.00%     70.04% # Class of executed instruction
+testsys.cpu.op_class::FloatDiv                      0      0.00%     70.04% # Class of executed instruction
+testsys.cpu.op_class::FloatMisc                     0      0.00%     70.04% # Class of executed instruction
+testsys.cpu.op_class::FloatSqrt                     0      0.00%     70.04% # Class of executed instruction
+testsys.cpu.op_class::SimdAdd                       0      0.00%     70.04% # Class of executed instruction
+testsys.cpu.op_class::SimdAddAcc                    0      0.00%     70.04% # Class of executed instruction
+testsys.cpu.op_class::SimdAlu                       0      0.00%     70.04% # Class of executed instruction
+testsys.cpu.op_class::SimdCmp                       0      0.00%     70.04% # Class of executed instruction
+testsys.cpu.op_class::SimdCvt                       0      0.00%     70.04% # Class of executed instruction
+testsys.cpu.op_class::SimdMisc                      0      0.00%     70.04% # Class of executed instruction
+testsys.cpu.op_class::SimdMult                      0      0.00%     70.04% # Class of executed instruction
+testsys.cpu.op_class::SimdMultAcc                   0      0.00%     70.04% # Class of executed instruction
+testsys.cpu.op_class::SimdShift                     0      0.00%     70.04% # Class of executed instruction
+testsys.cpu.op_class::SimdShiftAcc                  0      0.00%     70.04% # Class of executed instruction
+testsys.cpu.op_class::SimdSqrt                      0      0.00%     70.04% # Class of executed instruction
+testsys.cpu.op_class::SimdFloatAdd                  0      0.00%     70.04% # Class of executed instruction
+testsys.cpu.op_class::SimdFloatAlu                  0      0.00%     70.04% # Class of executed instruction
+testsys.cpu.op_class::SimdFloatCmp                  0      0.00%     70.04% # Class of executed instruction
+testsys.cpu.op_class::SimdFloatCvt                  0      0.00%     70.04% # Class of executed instruction
+testsys.cpu.op_class::SimdFloatDiv                  0      0.00%     70.04% # Class of executed instruction
+testsys.cpu.op_class::SimdFloatMisc              2180      0.00%     70.04% # Class of executed instruction
+testsys.cpu.op_class::SimdFloatMult                 0      0.00%     70.04% # Class of executed instruction
+testsys.cpu.op_class::SimdFloatMultAcc              0      0.00%     70.04% # Class of executed instruction
+testsys.cpu.op_class::SimdFloatSqrt                 0      0.00%     70.04% # Class of executed instruction
+testsys.cpu.op_class::MemRead                11498979     18.80%     88.84% # Class of executed instruction
+testsys.cpu.op_class::MemWrite                6814892     11.14%     99.98% # Class of executed instruction
+testsys.cpu.op_class::FloatMemRead               1504      0.00%     99.98% # Class of executed instruction
+testsys.cpu.op_class::FloatMemWrite              9846      0.02%    100.00% # Class of executed instruction
+testsys.cpu.op_class::IprAccess                     0      0.00%    100.00% # Class of executed instruction
+testsys.cpu.op_class::InstPrefetch                  0      0.00%    100.00% # Class of executed instruction
+testsys.cpu.op_class::total                  61174704                       # Class of executed instruction
+testsys.iobridge.pwrStateResidencyTicks::UNDEFINED 6282345225000                       # Cumulative time (in ticks) in various power states
+testsys.iobus.pwrStateResidencyTicks::UNDEFINED 6282345225000                       # Cumulative time (in ticks) in various power states
+testsys.iobus.trans_dist::ReadReq                4967                       # Transaction distribution
+testsys.iobus.trans_dist::ReadResp               4967                       # Transaction distribution
+testsys.iobus.trans_dist::WriteReq              12186                       # Transaction distribution
+testsys.iobus.trans_dist::WriteResp             12186                       # Transaction distribution
+testsys.iobus.pkt_count_testsys.bridge.master::testsys.realview.uart.pio        26610                       # Packet count per connected master and slave (bytes)
+testsys.iobus.pkt_count_testsys.bridge.master::testsys.realview.ide.pio         1612                       # Packet count per connected master and slave (bytes)
+testsys.iobus.pkt_count_testsys.bridge.master::testsys.realview.ethernet.pio          964                       # Packet count per connected master and slave (bytes)
+testsys.iobus.pkt_count_testsys.bridge.master::testsys.realview.apollondev.pio          402                       # Packet count per connected master and slave (bytes)
+testsys.iobus.pkt_count_testsys.bridge.master::total        29588                       # Packet count per connected master and slave (bytes)
+testsys.iobus.pkt_count_testsys.realview.ide.dma::testsys.iobridge.slave         1442                       # Packet count per connected master and slave (bytes)
+testsys.iobus.pkt_count_testsys.realview.ide.dma::total         1442                       # Packet count per connected master and slave (bytes)
+testsys.iobus.pkt_count_testsys.realview.ethernet.dma::testsys.iobridge.slave           76                       # Packet count per connected master and slave (bytes)
+testsys.iobus.pkt_count_testsys.realview.ethernet.dma::total           76                       # Packet count per connected master and slave (bytes)
+testsys.iobus.pkt_count_testsys.realview.apollondev.dma::testsys.iobridge.slave         3200                       # Packet count per connected master and slave (bytes)
+testsys.iobus.pkt_count_testsys.realview.apollondev.dma::total         3200                       # Packet count per connected master and slave (bytes)
+testsys.iobus.pkt_count::total                  34306                       # Packet count per connected master and slave (bytes)
+testsys.iobus.pkt_size_testsys.bridge.master::testsys.realview.uart.pio        26610                       # Cumulative packet size per connected master and slave (bytes)
+testsys.iobus.pkt_size_testsys.bridge.master::testsys.realview.ide.pio          899                       # Cumulative packet size per connected master and slave (bytes)
+testsys.iobus.pkt_size_testsys.bridge.master::testsys.realview.ethernet.pio         1928                       # Cumulative packet size per connected master and slave (bytes)
+testsys.iobus.pkt_size_testsys.bridge.master::testsys.realview.apollondev.pio          804                       # Cumulative packet size per connected master and slave (bytes)
+testsys.iobus.pkt_size_testsys.bridge.master::total        30241                       # Cumulative packet size per connected master and slave (bytes)
+testsys.iobus.pkt_size_testsys.realview.ide.dma::testsys.iobridge.slave        44296                       # Cumulative packet size per connected master and slave (bytes)
+testsys.iobus.pkt_size_testsys.realview.ide.dma::total        44296                       # Cumulative packet size per connected master and slave (bytes)
+testsys.iobus.pkt_size_testsys.realview.ethernet.dma::testsys.iobridge.slave         1144                       # Cumulative packet size per connected master and slave (bytes)
+testsys.iobus.pkt_size_testsys.realview.ethernet.dma::total         1144                       # Cumulative packet size per connected master and slave (bytes)
+testsys.iobus.pkt_size_testsys.realview.apollondev.dma::testsys.iobridge.slave        92800                       # Cumulative packet size per connected master and slave (bytes)
+testsys.iobus.pkt_size_testsys.realview.apollondev.dma::total        92800                       # Cumulative packet size per connected master and slave (bytes)
+testsys.iobus.pkt_size::total                  168481                       # Cumulative packet size per connected master and slave (bytes)
+testsys.membus.snoop_filter.tot_requests            0                       # Total number of requests made to the snoop filter.
+testsys.membus.snoop_filter.hit_single_requests            0                       # Number of requests hitting in the snoop filter with a single holder of the requested data.
+testsys.membus.snoop_filter.hit_multi_requests            0                       # Number of requests hitting in the snoop filter with multiple (>1) holders of the requested data.
+testsys.membus.snoop_filter.tot_snoops              0                       # Total number of snoops made to the snoop filter.
+testsys.membus.snoop_filter.hit_single_snoops            0                       # Number of snoops hitting in the snoop filter with a single holder of the requested data.
+testsys.membus.snoop_filter.hit_multi_snoops            0                       # Number of snoops hitting in the snoop filter with multiple (>1) holders of the requested data.
+testsys.membus.pwrStateResidencyTicks::UNDEFINED 6282345225000                       # Cumulative time (in ticks) in various power states
+testsys.membus.trans_dist::ReadReq           62021407                       # Transaction distribution
+testsys.membus.trans_dist::ReadResp          62082720                       # Transaction distribution
+testsys.membus.trans_dist::WriteReq           6684276                       # Transaction distribution
+testsys.membus.trans_dist::WriteResp          6684276                       # Transaction distribution
+testsys.membus.trans_dist::SoftPFReq            65178                       # Transaction distribution
+testsys.membus.trans_dist::SoftPFResp           65178                       # Transaction distribution
+testsys.membus.trans_dist::LoadLockedReq        61313                       # Transaction distribution
+testsys.membus.trans_dist::StoreCondReq         60429                       # Transaction distribution
+testsys.membus.trans_dist::StoreCondResp        60429                       # Transaction distribution
+testsys.membus.pkt_count_testsys.iobridge.master::testsys.mem_ctrls.port         4718                       # Packet count per connected master and slave (bytes)
+testsys.membus.pkt_count_testsys.iobridge.master::total         4718                       # Packet count per connected master and slave (bytes)
+testsys.membus.pkt_count_testsys.cpu.icache_port::testsys.mem_ctrls.port    101363958                       # Packet count per connected master and slave (bytes)
+testsys.membus.pkt_count_testsys.cpu.icache_port::total    101363958                       # Packet count per connected master and slave (bytes)
+testsys.membus.pkt_count_testsys.cpu.dcache_port::testsys.bridge.slave        29588                       # Packet count per connected master and slave (bytes)
+testsys.membus.pkt_count_testsys.cpu.dcache_port::testsys.realview.gic.pio         5230                       # Packet count per connected master and slave (bytes)
+testsys.membus.pkt_count_testsys.cpu.dcache_port::testsys.mem_ctrls.port     36351382                       # Packet count per connected master and slave (bytes)
+testsys.membus.pkt_count_testsys.cpu.dcache_port::total     36386200                       # Packet count per connected master and slave (bytes)
+testsys.membus.pkt_count_testsys.cpu.itb.walker.dma::testsys.mem_ctrls.port         9870                       # Packet count per connected master and slave (bytes)
+testsys.membus.pkt_count_testsys.cpu.itb.walker.dma::total         9870                       # Packet count per connected master and slave (bytes)
+testsys.membus.pkt_count_testsys.cpu.dtb.walker.dma::testsys.mem_ctrls.port        20460                       # Packet count per connected master and slave (bytes)
+testsys.membus.pkt_count_testsys.cpu.dtb.walker.dma::total        20460                       # Packet count per connected master and slave (bytes)
+testsys.membus.pkt_count::total             137785206                       # Packet count per connected master and slave (bytes)
+testsys.membus.pkt_size_testsys.iobridge.master::testsys.mem_ctrls.port       138240                       # Cumulative packet size per connected master and slave (bytes)
+testsys.membus.pkt_size_testsys.iobridge.master::total       138240                       # Cumulative packet size per connected master and slave (bytes)
+testsys.membus.pkt_size_testsys.cpu.icache_port::testsys.mem_ctrls.port    202727916                       # Cumulative packet size per connected master and slave (bytes)
+testsys.membus.pkt_size_testsys.cpu.icache_port::total    202727916                       # Cumulative packet size per connected master and slave (bytes)
+testsys.membus.pkt_size_testsys.cpu.dcache_port::testsys.bridge.slave        30241                       # Cumulative packet size per connected master and slave (bytes)
+testsys.membus.pkt_size_testsys.cpu.dcache_port::testsys.realview.gic.pio        10460                       # Cumulative packet size per connected master and slave (bytes)
+testsys.membus.pkt_size_testsys.cpu.dcache_port::testsys.mem_ctrls.port     82566697                       # Cumulative packet size per connected master and slave (bytes)
+testsys.membus.pkt_size_testsys.cpu.dcache_port::total     82607398                       # Cumulative packet size per connected master and slave (bytes)
+testsys.membus.pkt_size_testsys.cpu.itb.walker.dma::testsys.mem_ctrls.port        19740                       # Cumulative packet size per connected master and slave (bytes)
+testsys.membus.pkt_size_testsys.cpu.itb.walker.dma::total        19740                       # Cumulative packet size per connected master and slave (bytes)
+testsys.membus.pkt_size_testsys.cpu.dtb.walker.dma::testsys.mem_ctrls.port        40920                       # Cumulative packet size per connected master and slave (bytes)
+testsys.membus.pkt_size_testsys.cpu.dtb.walker.dma::total        40920                       # Cumulative packet size per connected master and slave (bytes)
+testsys.membus.pkt_size::total              285534214                       # Cumulative packet size per connected master and slave (bytes)
+testsys.membus.snoops                               0                       # Total snoops (count)
+testsys.membus.snoopTraffic                         0                       # Total snoop traffic (bytes)
+testsys.membus.snoop_fanout::samples         68892603                       # Request fanout histogram
+testsys.membus.snoop_fanout::mean                   0                       # Request fanout histogram
+testsys.membus.snoop_fanout::stdev                  0                       # Request fanout histogram
+testsys.membus.snoop_fanout::underflows             0      0.00%      0.00% # Request fanout histogram
+testsys.membus.snoop_fanout::0               68892603    100.00%    100.00% # Request fanout histogram
+testsys.membus.snoop_fanout::1                      0      0.00%    100.00% # Request fanout histogram
+testsys.membus.snoop_fanout::overflows              0      0.00%    100.00% # Request fanout histogram
+testsys.membus.snoop_fanout::min_value              0                       # Request fanout histogram
+testsys.membus.snoop_fanout::max_value              0                       # Request fanout histogram
+testsys.membus.snoop_fanout::total           68892603                       # Request fanout histogram
+testsys.membus.badaddr_responder.pwrStateResidencyTicks::UNDEFINED 6282345225000                       # Cumulative time (in ticks) in various power states
+testsys.realview.aaci_fake.pwrStateResidencyTicks::UNDEFINED 6282345225000                       # Cumulative time (in ticks) in various power states
+testsys.realview.gic.pwrStateResidencyTicks::UNDEFINED 6282345225000                       # Cumulative time (in ticks) in various power states
+testsys.realview.apollondev.pwrStateResidencyTicks::UNDEFINED 6282345225000                       # Cumulative time (in ticks) in various power states
+testsys.realview.pci_host.pwrStateResidencyTicks::UNDEFINED 6282345225000                       # Cumulative time (in ticks) in various power states
+testsys.realview.cf_ctrl.pwrStateResidencyTicks::UNDEFINED 6282345225000                       # Cumulative time (in ticks) in various power states
+testsys.realview.clcd.pwrStateResidencyTicks::UNDEFINED 6282345225000                       # Cumulative time (in ticks) in various power states
+testsys.realview.realview_io.pwrStateResidencyTicks::UNDEFINED 6282345225000                       # Cumulative time (in ticks) in various power states
+testsys.realview.dcc.osc_cpu.clock              16667                       # Clock period in ticks
+testsys.realview.dcc.osc_ddr.clock              25000                       # Clock period in ticks
+testsys.realview.dcc.osc_hsbm.clock             25000                       # Clock period in ticks
+testsys.realview.dcc.osc_pxl.clock              42105                       # Clock period in ticks
+testsys.realview.dcc.osc_smb.clock              20000                       # Clock period in ticks
+testsys.realview.dcc.osc_sys.clock              16667                       # Clock period in ticks
+testsys.realview.energy_ctrl.pwrStateResidencyTicks::UNDEFINED 6282345225000                       # Cumulative time (in ticks) in various power states
+testsys.realview.ethernet.pwrStateResidencyTicks::UNDEFINED 6282345225000                       # Cumulative time (in ticks) in various power states
+testsys.realview.ethernet.txBytes                 666                       # Bytes Transmitted
+testsys.realview.ethernet.rxBytes                 158                       # Bytes Received
+testsys.realview.ethernet.txPackets                 8                       # Number of Packets Transmitted
+testsys.realview.ethernet.rxPackets                 2                       # Number of Packets Received
+testsys.realview.ethernet.txIpChecksums             0                       # Number of tx IP Checksums done by device
+testsys.realview.ethernet.rxIpChecksums             0                       # Number of rx IP Checksums done by device
+testsys.realview.ethernet.txTcpChecksums            0                       # Number of tx TCP Checksums done by device
+testsys.realview.ethernet.rxTcpChecksums            0                       # Number of rx TCP Checksums done by device
+testsys.realview.ethernet.txUdpChecksums            0                       # Number of tx UDP Checksums done by device
+testsys.realview.ethernet.rxUdpChecksums            0                       # Number of rx UDP Checksums done by device
+testsys.realview.ethernet.descDMAReads              0                       # Number of descriptors the device read w/ DMA
+testsys.realview.ethernet.descDMAWrites             0                       # Number of descriptors the device wrote w/ DMA
+testsys.realview.ethernet.descDmaReadBytes            0                       # number of descriptor bytes read w/ DMA
+testsys.realview.ethernet.descDmaWriteBytes            0                       # number of descriptor bytes write w/ DMA
+testsys.realview.ethernet.totBandwidth           1887                       # Total Bandwidth (bits/s)
+testsys.realview.ethernet.totPackets               10                       # Total Packets
+testsys.realview.ethernet.totBytes                824                       # Total Bytes
+testsys.realview.ethernet.totPPS                    3                       # Total Tranmission Rate (packets/s)
+testsys.realview.ethernet.txBandwidth            1526                       # Transmit Bandwidth (bits/s)
+testsys.realview.ethernet.rxBandwidth             362                       # Receive Bandwidth (bits/s)
+testsys.realview.ethernet.txPPS                     2                       # Packet Tranmission Rate (packets/s)
+testsys.realview.ethernet.rxPPS                     1                       # Packet Reception Rate (packets/s)
+testsys.realview.ethernet.postedSwi                 0                       # number of software interrupts posted to CPU
+testsys.realview.ethernet.coalescedSwi              0                       # average number of Swi's coalesced into each post
+testsys.realview.ethernet.totalSwi                  0                       # total number of Swi written to ISR
+testsys.realview.ethernet.postedRxIdle              0                       # number of rxIdle interrupts posted to CPU
+testsys.realview.ethernet.coalescedRxIdle            0                       # average number of RxIdle's coalesced into each post
+testsys.realview.ethernet.totalRxIdle               0                       # total number of RxIdle written to ISR
+testsys.realview.ethernet.postedRxOk                0                       # number of RxOk interrupts posted to CPU
+testsys.realview.ethernet.coalescedRxOk             0                       # average number of RxOk's coalesced into each post
+testsys.realview.ethernet.totalRxOk                 0                       # total number of RxOk written to ISR
+testsys.realview.ethernet.postedRxDesc              0                       # number of RxDesc interrupts posted to CPU
+testsys.realview.ethernet.coalescedRxDesc            0                       # average number of RxDesc's coalesced into each post
+testsys.realview.ethernet.totalRxDesc               0                       # total number of RxDesc written to ISR
+testsys.realview.ethernet.postedTxOk                0                       # number of TxOk interrupts posted to CPU
+testsys.realview.ethernet.coalescedTxOk             0                       # average number of TxOk's coalesced into each post
+testsys.realview.ethernet.totalTxOk                 0                       # total number of TxOk written to ISR
+testsys.realview.ethernet.postedTxIdle              0                       # number of TxIdle interrupts posted to CPU
+testsys.realview.ethernet.coalescedTxIdle            0                       # average number of TxIdle's coalesced into each post
+testsys.realview.ethernet.totalTxIdle               0                       # total number of TxIdle written to ISR
+testsys.realview.ethernet.postedTxDesc              0                       # number of TxDesc interrupts posted to CPU
+testsys.realview.ethernet.coalescedTxDesc            0                       # average number of TxDesc's coalesced into each post
+testsys.realview.ethernet.totalTxDesc               0                       # total number of TxDesc written to ISR
+testsys.realview.ethernet.postedRxOrn               0                       # number of RxOrn posted to CPU
+testsys.realview.ethernet.coalescedRxOrn            0                       # average number of RxOrn's coalesced into each post
+testsys.realview.ethernet.totalRxOrn                0                       # total number of RxOrn written to ISR
+testsys.realview.ethernet.coalescedTotal            0                       # average number of interrupts coalesced into each post
+testsys.realview.ethernet.postedInterrupts           18                       # number of posts to CPU
+testsys.realview.ethernet.droppedPackets            0                       # number of packets dropped
+testsys.realview.hdlcd.pwrStateResidencyTicks::UNDEFINED 6282345225000                       # Cumulative time (in ticks) in various power states
+testsys.realview.ide.pwrStateResidencyTicks::UNDEFINED 6282345225000                       # Cumulative time (in ticks) in various power states
+testsys.realview.kmi0.pwrStateResidencyTicks::UNDEFINED 6282345225000                       # Cumulative time (in ticks) in various power states
+testsys.realview.kmi1.pwrStateResidencyTicks::UNDEFINED 6282345225000                       # Cumulative time (in ticks) in various power states
+testsys.realview.l2x0_fake.pwrStateResidencyTicks::UNDEFINED 6282345225000                       # Cumulative time (in ticks) in various power states
+testsys.realview.lan_fake.pwrStateResidencyTicks::UNDEFINED 6282345225000                       # Cumulative time (in ticks) in various power states
+testsys.realview.local_cpu_timer.pwrStateResidencyTicks::UNDEFINED 6282345225000                       # Cumulative time (in ticks) in various power states
+testsys.realview.mcc.osc_clcd.clock             42105                       # Clock period in ticks
+testsys.realview.mcc.osc_mcc.clock              20000                       # Clock period in ticks
+testsys.realview.mcc.osc_peripheral.clock        41667                       # Clock period in ticks
+testsys.realview.mcc.osc_system_bus.clock        41667                       # Clock period in ticks
+testsys.realview.mmc_fake.pwrStateResidencyTicks::UNDEFINED 6282345225000                       # Cumulative time (in ticks) in various power states
+testsys.realview.rtc.pwrStateResidencyTicks::UNDEFINED 6282345225000                       # Cumulative time (in ticks) in various power states
+testsys.realview.sp810_fake.pwrStateResidencyTicks::UNDEFINED 6282345225000                       # Cumulative time (in ticks) in various power states
+testsys.realview.timer0.pwrStateResidencyTicks::UNDEFINED 6282345225000                       # Cumulative time (in ticks) in various power states
+testsys.realview.timer1.pwrStateResidencyTicks::UNDEFINED 6282345225000                       # Cumulative time (in ticks) in various power states
+testsys.realview.uart.pwrStateResidencyTicks::UNDEFINED 6282345225000                       # Cumulative time (in ticks) in various power states
+testsys.realview.uart1_fake.pwrStateResidencyTicks::UNDEFINED 6282345225000                       # Cumulative time (in ticks) in various power states
+testsys.realview.uart2_fake.pwrStateResidencyTicks::UNDEFINED 6282345225000                       # Cumulative time (in ticks) in various power states
+testsys.realview.uart3_fake.pwrStateResidencyTicks::UNDEFINED 6282345225000                       # Cumulative time (in ticks) in various power states
+testsys.realview.usb_fake.pwrStateResidencyTicks::UNDEFINED 6282345225000                       # Cumulative time (in ticks) in various power states
+testsys.realview.vgic.pwrStateResidencyTicks::UNDEFINED 6282345225000                       # Cumulative time (in ticks) in various power states
+testsys.realview.watchdog_fake.pwrStateResidencyTicks::UNDEFINED 6282345225000                       # Cumulative time (in ticks) in various power states
+
+---------- End Simulation Statistics   ----------

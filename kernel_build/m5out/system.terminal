@@ -1,0 +1,421 @@
+Booting Linux on physical CPU 0x0
+Initializing cgroup subsys cpuset
+Linux version 3.14.0 (apollon@ubuntu) (gcc version 5.4.0 20160609 (Ubuntu/Linaro 5.4.0-6ubuntu1~16.04.9) ) #67 SMP PREEMPT Mon Feb 21 05:04:58 PST 2022
+Kernel was built at commit id '4f57884'
+CPU: ARMv7 Processor [410fc0f0] revision 0 (ARMv7), cr=10c53c7d
+CPU: PIPT / VIPT nonaliasing data cache, VIPT aliasing instruction cache
+Machine model: V2P-CA15
+bootconsole [earlycon0] enabled
+Memory policy: Data cache writealloc
+kdebugv2m: Following are test values to confirm proper working
+kdebugv2m: Ranges 42000000 0 
+kdebugv2m: Regs 30000000 1000000 
+kdebugv2m: Virtual-Reg f0000000 
+kdebugv2m: pci node addr_cells 3 
+kdebugv2m: pci node size_cells 2 
+kdebugv2m: motherboard addr_cells 2 
+On node 0 totalpages: 131072
+free_area_init_node: node 0, pgdat 80761080, node_mem_map 9fbf9000
+  Normal zone: 1024 pages used for memmap
+  Normal zone: 0 pages reserved
+  Normal zone: 131072 pages, LIFO batch:31
+sched_clock: 32 bits at 24MHz, resolution 41ns, wraps every 178956969942ns
+PERCPU: Embedded 8 pages/cpu @9fbe9000 s11712 r8192 d12864 u32768
+pcpu-alloc: s11712 r8192 d12864 u32768 alloc=8*4096
+pcpu-alloc: [0] 0 
+Built 1 zonelists in Zone order, mobility grouping on.  Total pages: 130048
+Kernel command line: earlyprintk=pl011,0x1c090000 console=ttyAMA0 lpj=19988480 norandmaps rw loglevel=8 mem=512MB root=/dev/sda1
+PID hash table entries: 2048 (order: 1, 8192 bytes)
+Dentry cache hash table entries: 65536 (order: 6, 262144 bytes)
+Inode-cache hash table entries: 32768 (order: 5, 131072 bytes)
+Memory: 495392K/524288K available (5444K kernel code, 255K rwdata, 1544K rodata, 291K init, 366K bss, 28896K reserved, 0K highmem)
+Virtual kernel memory layout:
+    vector  : 0xffff0000 - 0xffff1000   (   4 kB)
+    fixmap  : 0xfff00000 - 0xfffe0000   ( 896 kB)
+    vmalloc : 0xa0800000 - 0xff000000   (1512 MB)
+    lowmem  : 0x80000000 - 0xa0000000   ( 512 MB)
+    pkmap   : 0x7fe00000 - 0x80000000   (   2 MB)
+    modules : 0x7f000000 - 0x7fe00000   (  14 MB)
+      .text : 0x80008000 - 0x806db470   (6990 kB)
+      .init : 0x806dc000 - 0x80724dc0   ( 292 kB)
+      .data : 0x80726000 - 0x80765cac   ( 256 kB)
+       .bss : 0x80765cac - 0x807c15a0   ( 367 kB)
+SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=1, Nodes=1
+Preemptible hierarchical RCU implementation.
+	RCU restricting CPUs from NR_CPUS=8 to nr_cpu_ids=1.
+RCU: Adjusting geometry for rcu_fanout_leaf=16, nr_cpu_ids=1
+NR_IRQS:16 nr_irqs:16 16
+Architected cp15 timer(s) running at 25.16MHz (phys).
+sched_clock: 56 bits at 25MHz, resolution 39ns, wraps every 2730666655744ns
+Switching to timer-based delay loop
+Console: colour dummy device 80x30
+Calibrating delay loop (skipped) preset value.. 3997.69 BogoMIPS (lpj=19988480)
+pid_max: default: 32768 minimum: 301
+Mount-cache hash table entries: 1024 (order: 0, 4096 bytes)
+Mountpoint-cache hash table entries: 1024 (order: 0, 4096 bytes)
+CPU: Testing write buffer coherency: ok
+CPU0: update cpu_power 1024
+CPU0: thread -1, cpu 0, socket 0, mpidr 80000000
+Setting up static identity map for 0x80532798 - 0x805327cc
+Brought up 1 CPUs
+SMP: Total of 1 processors activated.
+CPU: All CPU(s) started in SVC mode.
+VFP support v0.3: implementor 41 architecture 4 part 30 variant a rev 0
+NET: Registered protocol family 16
+DMA: preallocated 256 KiB pool for atomic coherent allocations
+of_amba_device_create(): amba_device_add() failed (-19) for /smb/motherboard/iofpga@3,00000000/sysctl@020000
+of_amba_device_create(): amba_device_add() failed (-19) for /smb/motherboard/iofpga@3,00000000/aaci@040000
+of_amba_device_create(): amba_device_add() failed (-19) for /smb/motherboard/iofpga@3,00000000/mmci@050000
+of_amba_device_create(): amba_device_add() failed (-19) for /smb/motherboard/iofpga@3,00000000/uart@0a0000
+of_amba_device_create(): amba_device_add() failed (-19) for /smb/motherboard/iofpga@3,00000000/uart@0b0000
+of_amba_device_create(): amba_device_add() failed (-19) for /smb/motherboard/iofpga@3,00000000/uart@0c0000
+of_amba_device_create(): amba_device_add() failed (-19) for /smb/motherboard/iofpga@3,00000000/wdt@0f0000
+hw-breakpoint: Debug register access (0xee113e93) caused undefined instruction on CPU 0
+hw-breakpoint: Debug register access (0xee013e90) caused undefined instruction on CPU 0
+hw-breakpoint: Debug register access (0xee003e17) caused undefined instruction on CPU 0
+hw-breakpoint: CPU 0 failed to disable vector catch
+Serial: AMBA PL011 UART driver
+1c090000.uart: ttyAMA0 at MMIO 0x1c090000 (irq = 37, base_baud = 0) is a PL011 rev3
+console [ttyAMA0] enabled
+console [ttyAMA0] enabled
+bootconsole [earlycon0] disabled
+bootconsole [earlycon0] disabled
+PCI host bridge to bus 0000:00
+pci_bus 0000:00: root bus resource [io  0x0000-0xffffffff]
+pci_bus 0000:00: root bus resource [mem 0x00000000-0xffffffff]
+pci_bus 0000:00: root bus resource [bus 00-ff]
+pci 0000:00:00.0: [8086:1075] type 00 class 0x020000
+pci 0000:00:00.0: reg 0x10: [mem 0x00000000-0x0001ffff]
+pci 0000:00:00.0: reg 0x30: [mem 0x00000000-0x000007ff pref]
+pci 0000:00:01.0: [8086:7111] type 00 class 0x010185
+pci 0000:00:01.0: reg 0x10: [io  0x0000-0x0007]
+pci 0000:00:01.0: reg 0x14: [io  0x0000-0x0003]
+pci 0000:00:01.0: reg 0x18: [io  0x0000-0x0007]
+pci 0000:00:01.0: reg 0x1c: [io  0x0000-0x0003]
+pci 0000:00:01.0: reg 0x20: [io  0x0000-0x000f]
+pci 0000:00:01.0: reg 0x30: [mem 0x00000000-0x000007ff pref]
+PCI: bus0: Fast back to back transfers disabled
+pci 0000:00:00.0: BAR 0: assigned [mem 0x40000000-0x4001ffff]
+pci 0000:00:00.0: BAR 6: assigned [mem 0x40020000-0x400207ff pref]
+pci 0000:00:01.0: BAR 6: assigned [mem 0x40020800-0x40020fff pref]
+pci 0000:00:01.0: BAR 4: assigned [io  0x2f000000-0x2f00000f]
+pci 0000:00:01.0: BAR 0: assigned [io  0x2f000010-0x2f000017]
+pci 0000:00:01.0: BAR 2: assigned [io  0x2f000018-0x2f00001f]
+pci 0000:00:01.0: BAR 1: assigned [io  0x2f000020-0x2f000023]
+pci 0000:00:01.0: BAR 3: assigned [io  0x2f000024-0x2f000027]
+pci_bus 0000:00: resource 4 [io  0x0000-0xffffffff]
+pci_bus 0000:00: resource 5 [mem 0x00000000-0xffffffff]
+PCI map irq: slot 0, pin 1, devslot 0, irq: 68
+PCI map irq: slot 1, pin 2, devslot 1, irq: 69
+bio: create slab <bio-0> at 0
+vgaarb: loaded
+SCSI subsystem initialized
+libata version 3.00 loaded.
+usbcore: registered new interface driver usbfs
+usbcore: registered new interface driver hub
+usbcore: registered new device driver usb
+pps_core: LinuxPPS API ver. 1 registered
+pps_core: Software ver. 5.3.6 - Copyright 2005-2007 Rodolfo Giometti <giometti@linux.it>
+PTP clock support registered
+Advanced Linux Sound Architecture Driver Initialized.
+Switched to clocksource arch_sys_counter
+NET: Registered protocol family 2
+TCP established hash table entries: 4096 (order: 2, 16384 bytes)
+TCP bind hash table entries: 4096 (order: 3, 32768 bytes)
+TCP: Hash tables configured (established 4096 bind 4096)
+TCP: reno registered
+UDP hash table entries: 256 (order: 1, 8192 bytes)
+UDP-Lite hash table entries: 256 (order: 1, 8192 bytes)
+NET: Registered protocol family 1
+RPC: Registered named UNIX socket transport module.
+RPC: Registered udp transport module.
+RPC: Registered tcp transport module.
+RPC: Registered tcp NFSv4.1 backchannel transport module.
+PCI: CLS 64 bytes, default 64
+hw perfevents: enabled with ARMv7_Cortex_A15 PMU driver, 1 counters available
+
+
+APOLLON DEVICE: REQUEST KERNEL REGION OK
+
+futex hash table entries: 256 (order: 2, 16384 bytes)
+jffs2: version 2.2. (NAND) © 2001-2006 Red Hat, Inc.
+msgmni has been set to 967
+io scheduler noop registered (default)
+brd: module loaded
+loop: module loaded
+ata_piix 0000:00:01.0: version 2.13
+PCI: enabling device 0000:00:01.0 (0040 -> 0041)
+scsi0 : ata_piix
+scsi1 : ata_piix
+ata1: PATA max UDMA/33 cmd 0x2f000010 ctl 0x2f000020 bmdma 0x2f000000 irq 69
+ata2: PATA max UDMA/33 cmd 0x2f000018 ctl 0x2f000024 bmdma 0x2f000008 irq 69
+e100: Intel(R) PRO/100 Network Driver, 3.5.24-k2-NAPI
+e100: Copyright(c) 1999-2006 Intel Corporation
+e1000: Intel(R) PRO/1000 Network Driver - version 7.3.21-k8-NAPI
+e1000: Copyright (c) 1999-2006 Intel Corporation.
+PCI: enabling device 0000:00:00.0 (0040 -> 0042)
+ata1.00: ATA-7: M5 IDE Disk, , max UDMA/66
+ata1.00: 1048320 sectors, multi 0: LBA 
+ata1.00: configured for UDMA/33
+scsi 0:0:0:0: Direct-Access     ATA      M5 IDE Disk      n/a  PQ: 0 ANSI: 5
+sd 0:0:0:0: [sda] 1048320 512-byte logical blocks: (536 MB/511 MiB)
+sd 0:0:0:0: [sda] Write Protect is off
+sd 0:0:0:0: [sda] Mode Sense: 00 3a 00 00
+sd 0:0:0:0: [sda] Write cache: disabled, read cache: enabled, doesn't support DPO or FUA
+ sda: sda1
+sd 0:0:0:0: Attached scsi generic sg0 type 0
+sd 0:0:0:0: [sda] Attached SCSI disk
+e1000 0000:00:00.0 eth0: (PCI:33MHz:32-bit) 00:90:00:00:00:01
+e1000 0000:00:00.0 eth0: Intel(R) PRO/1000 Network Connection
+e1000e: Intel(R) PRO/1000 Network Driver - 2.3.2-k
+e1000e: Copyright(c) 1999 - 2013 Intel Corporation.
+igb: Intel(R) Gigabit Ethernet Network Driver - version 5.0.5-k
+igb: Copyright (c) 2007-2013 Intel Corporation.
+igbvf: Intel(R) Gigabit Virtual Function Network Driver - version 2.0.2-k
+igbvf: Copyright (c) 2009 - 2012 Intel Corporation.
+ixgbe: Intel(R) 10 Gigabit PCI Express Network Driver - version 3.19.1-k
+ixgbe: Copyright (c) 1999-2013 Intel Corporation.
+ixgbevf: Intel(R) 10 Gigabit PCI Express Virtual Function Network Driver - version 2.12.1-k
+ixgbevf: Copyright (c) 2009 - 2012 Intel Corporation.
+ixgb: Intel(R) PRO/10GbE Network Driver - version 1.0.135-k2-NAPI
+ixgb: Copyright (c) 1999-2008 Intel Corporation.
+smsc911x: Driver version 2008-10-21
+smsc911x 1a000000.ethernet (unregistered net_device): couldn't get clock -2
+nxp-isp1760 1b000000.usb: NXP ISP1760 USB Host Controller
+nxp-isp1760 1b000000.usb: new USB bus registered, assigned bus number 1
+nxp-isp1760 1b000000.usb: Scratch test failed.
+nxp-isp1760 1b000000.usb: can't setup: -19
+nxp-isp1760 1b000000.usb: USB bus 1 deregistered
+usbcore: registered new interface driver usb-storage
+mousedev: PS/2 mouse device common for all mice
+rtc-pl031 1c170000.rtc: rtc core: registered pl031 as rtc0
+usbcore: registered new interface driver usbhid
+usbhid: USB HID core driver
+ashmem: initialized
+logger: created 256K log 'log_main'
+logger: created 256K log 'log_events'
+logger: created 256K log 'log_radio'
+logger: created 256K log 'log_system'
+oprofile: using timer interrupt.
+TCP: cubic registered
+NET: Registered protocol family 10
+NET: Registered protocol family 17
+rtc-pl031 1c170000.rtc: setting system clock to 2009-01-01 00:00:00 UTC (1230768000)
+ALSA device list:
+  No soundcards found.
+ input: AT Raw Set 2 keyboard as /devices/smb.14/motherboard.15/iofpga.17/1c060000.kmi/serio0/input/input0
+input: touchkitPS/2 eGalax Touchscreen as /devices/smb.14/motherboard.15/iofpga.17/1c070000.kmi/serio1/input/input2
+EXT2-fs (sda1): warning: mounting unchecked fs, running e2fsck is recommended
+VFS: Mounted root (ext2 filesystem) on device 8:1.
+Freeing unused kernel memory: 288K (806dc000 - 80724000)
+init started: BusyBox v1.15.3 (2010-05-07 01:27:07 BST)
+starting pid 681, tty '': '/etc/rc.d/rc.local'
+warning: can't open /etc/mtab: No such file or directory
+Thu Jan  1 00:00:02 UTC 2009
+S: devpts
+EXT2-fs (sda1): error: ext2_lookup: deleted inode referenced: 10246
+rm: cannot stat '/var/run/utmp': Input/output error
+Thu Jan  1 00:00:02 UTC 2009
+IPv6: ADDRCONF(NETDEV_UP): eth0: link is not ready
+Iteration:0
+The value of Temperature Of Sensor1 is: 993.170000
+Iteration:1
+The value of Temperature Of Sensor1 is: 14.730000
+e1000: eth0 NIC Link is Up 1000 Mbps Full Duplex, Flow Control: None
+IPv6: ADDRCONF(NETDEV_CHANGE): eth0: link becomes ready
+Iteration:2
+The value of Temperature Of Sensor1 is: 288.450000
+Iteration:3
+The value of Temperature Of Sensor1 is: 14.560000
+Iteration:4
+The value of Temperature Of Sensor1 is: 98.900000
+Iteration:5
+The value of Temperature Of Sensor1 is: 16.780000
+Iteration:6
+The value of Temperature Of Sensor1 is: 16.600000
+Iteration:7
+The value of Temperature Of Sensor1 is: 0.180000
+Iteration:8
+The value of Temperature Of Sensor1 is: 10.460000
+Iteration:9
+The value of Temperature Of Sensor1 is: 16.710000
+Iteration:10
+The value of Temperature Of Sensor1 is: 1194.190000
+Iteration:11
+The value of Temperature Of Sensor1 is: 2.580000
+Iteration:12
+The value of Temperature Of Sensor1 is: 4.140000
+Iteration:13
+The value of Temperature Of Sensor1 is: 28.760000
+Iteration:14
+The value of Temperature Of Sensor1 is: 993.250000
+Iteration:15
+The value of Temperature Of Sensor1 is: 14.730000
+Iteration:16
+The value of Temperature Of Sensor1 is: 288.450000
+Iteration:17
+The value of Temperature Of Sensor1 is: 14.560000
+Iteration:18
+The value of Temperature Of Sensor1 is: 98.900000
+Iteration:19
+The value of Temperature Of Sensor1 is: 16.780000
+Iteration:20
+The value of Temperature Of Sensor1 is: 16.600000
+Iteration:21
+The value of Temperature Of Sensor1 is: 0.180000
+Iteration:22
+The value of Temperature Of Sensor1 is: 10.460000
+Iteration:23
+The value of Temperature Of Sensor1 is: 16.710000
+Iteration:24
+The value of Temperature Of Sensor1 is: 1194.290000
+Iteration:25
+The value of Temperature Of Sensor1 is: 2.080000
+Iteration:26
+The value of Temperature Of Sensor1 is: 2.800000
+Iteration:27
+The value of Temperature Of Sensor1 is: 25.650000
+Iteration:28
+The value of Temperature Of Sensor1 is: 993.300000
+Iteration:29
+The value of Temperature Of Sensor1 is: 14.730000
+Iteration:30
+The value of Temperature Of Sensor1 is: 288.440000
+Iteration:31
+The value of Temperature Of Sensor1 is: 14.560000
+Iteration:32
+The value of Temperature Of Sensor1 is: 98.900000
+Iteration:33
+The value of Temperature Of Sensor1 is: 16.780000
+Iteration:34
+The value of Temperature Of Sensor1 is: 16.600000
+Iteration:35
+The value of Temperature Of Sensor1 is: 0.180000
+Iteration:36
+The value of Temperature Of Sensor1 is: 10.460000
+Iteration:37
+The value of Temperature Of Sensor1 is: 16.710000
+Iteration:38
+The value of Temperature Of Sensor1 is: 1194.340000
+Iteration:39
+The value of Temperature Of Sensor1 is: 2.410000
+Iteration:40
+The value of Temperature Of Sensor1 is: 3.240000
+Iteration:41
+The value of Temperature Of Sensor1 is: 27.590000
+Iteration:42
+The value of Temperature Of Sensor1 is: 993.290000
+Iteration:43
+The value of Temperature Of Sensor1 is: 14.730000
+Iteration:44
+The value of Temperature Of Sensor1 is: 288.440000
+Iteration:45
+The value of Temperature Of Sensor1 is: 14.560000
+Iteration:46
+The value of Temperature Of Sensor1 is: 98.900000
+Iteration:47
+The value of Temperature Of Sensor1 is: 16.780000
+Iteration:48
+The value of Temperature Of Sensor1 is: 16.600000
+Iteration:49
+The value of Temperature Of Sensor1 is: 0.180000
+Iteration:50
+The value of Temperature Of Sensor1 is: 10.460000
+Iteration:51
+The value of Temperature Of Sensor1 is: 16.710000
+Iteration:52
+The value of Temperature Of Sensor1 is: 1194.340000
+Iteration:53
+The value of Temperature Of Sensor1 is: 2.130000
+Iteration:54
+The value of Temperature Of Sensor1 is: 3.480000
+Iteration:55
+The value of Temperature Of Sensor1 is: 27.040000
+Iteration:56
+The value of Temperature Of Sensor1 is: 993.420000
+Iteration:57
+The value of Temperature Of Sensor1 is: 14.730000
+Iteration:58
+The value of Temperature Of Sensor1 is: 288.430000
+Iteration:59
+The value of Temperature Of Sensor1 is: 14.560000
+Iteration:60
+The value of Temperature Of Sensor1 is: 98.900000
+Iteration:61
+The value of Temperature Of Sensor1 is: 16.780000
+Iteration:62
+The value of Temperature Of Sensor1 is: 16.600000
+Iteration:63
+The value of Temperature Of Sensor1 is: 0.180000
+Iteration:64
+The value of Temperature Of Sensor1 is: 10.460000
+Iteration:65
+The value of Temperature Of Sensor1 is: 16.710000
+Iteration:66
+The value of Temperature Of Sensor1 is: 1194.490000
+Iteration:67
+The value of Temperature Of Sensor1 is: 2.040000
+Iteration:68
+The value of Temperature Of Sensor1 is: 2.960000
+Iteration:69
+The value of Temperature Of Sensor1 is: 26.630000
+Iteration:70
+The value of Temperature Of Sensor1 is: 993.530000
+Iteration:71
+The value of Temperature Of Sensor1 is: 14.730000
+Iteration:72
+The value of Temperature Of Sensor1 is: 288.420000
+Iteration:73
+The value of Temperature Of Sensor1 is: 14.560000
+Iteration:74
+The value of Temperature Of Sensor1 is: 98.900000
+Iteration:75
+The value of Temperature Of Sensor1 is: 16.780000
+Iteration:76
+The value of Temperature Of Sensor1 is: 16.600000
+Iteration:77
+The value of Temperature Of Sensor1 is: 0.180000
+Iteration:78
+The value of Temperature Of Sensor1 is: 10.460000
+Iteration:79
+The value of Temperature Of Sensor1 is: 16.710000
+Iteration:80
+The value of Temperature Of Sensor1 is: 1194.620000
+Iteration:81
+The value of Temperature Of Sensor1 is: 1.450000
+Iteration:82
+The value of Temperature Of Sensor1 is: 2.520000
+Iteration:83
+The value of Temperature Of Sensor1 is: 26.890000
+Iteration:84
+The value of Temperature Of Sensor1 is: 993.450000
+Iteration:85
+The value of Temperature Of Sensor1 is: 14.730000
+Iteration:86
+The value of Temperature Of Sensor1 is: 288.430000
+Iteration:87
+The value of Temperature Of Sensor1 is: 14.560000
+Iteration:88
+The value of Temperature Of Sensor1 is: 98.900000
+Iteration:89
+The value of Temperature Of Sensor1 is: 16.780000
+Iteration:90
+The value of Temperature Of Sensor1 is: 16.600000
+Iteration:91
+The value of Temperature Of Sensor1 is: 0.180000
+Iteration:92
+The value of Temperature Of Sensor1 is: 10.460000
+Iteration:93
+The value of Temperature Of Sensor1 is: 16.710000
+Iteration:94
+The value of Temperature Of Sensor1 is: 1194.530000
+Iteration:95
+The value of Temperature Of Sensor1 is: 2.050000
+Iteration:96
+The value of Temperature Of Sensor1 is: 3.200000
+Iteration:97
+The value of Temperature Of Sensor1 is: 23.950000
+Iteration:98
+The value of Temperature Of Sensor1 is: 993.390000
+Iteration:99
+The value of Temperature Of Sensor1 is: 14.690000

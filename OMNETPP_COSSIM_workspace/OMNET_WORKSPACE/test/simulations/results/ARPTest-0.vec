@@ -1,0 +1,202 @@
+version 2
+run ARPTest-0-20220221-06:47:27-2526
+attr configname ARPTest
+attr datetime 20220221-06:47:27
+attr experiment ARPTest
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=0
+attr measurement ""
+attr network ARPTest
+attr processid 2526
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+param *.configurator.addStaticRoutes false
+param *.micro_router*.energyStorageType "\"IdealEnergyStorage\""
+param *.micro_router*.wlan[0].radio.bandwidth 2MHz
+param *.micro_router*.wlan[0].radio.carrierFrequency 2GHz
+param *.micro_router*.wlan[0].radio.energyConsumer.offPowerConsumption 0mW
+param *.micro_router*.wlan[0].radio.energyConsumer.receiverBusyPowerConsumption 5mW
+param *.micro_router*.wlan[0].radio.energyConsumer.receiverIdlePowerConsumption 2mW
+param *.micro_router*.wlan[0].radio.energyConsumer.receiverReceivingPowerConsumption 10mW
+param *.micro_router*.wlan[0].radio.energyConsumer.sleepPowerConsumption 1mW
+param *.micro_router*.wlan[0].radio.energyConsumer.switchingPowerConsumption 1mW
+param *.micro_router*.wlan[0].radio.energyConsumer.transmitterTransmittingPowerConsumption 100mW
+param *.micro_router*.wlan[0].radio.energyConsumerType "\"StateBasedEnergyConsumer\""
+param *.micro_router*.wlan[0].radio.receiver.energyDetection -85dBm
+param *.micro_router*.wlan[0].radio.receiver.sensitivity -85dBm
+param *.micro_router*.wlan[0].radio.receiver.snirThreshold 4dB
+param *.micro_router*.wlan[0].radio.transmitter.communicationRange 250m
+param *.micro_router*.wlan[0].radio.transmitter.headerBitLength 0b
+param *.micro_router*.wlan[0].radio.transmitter.power 1.4mW
+param *.micro_router*.wlan[0].radio.transmitter.preambleDuration 10us
+param *.micro_router*.wlan[0].radio.typename "\"IdealWirelessNic\""
+param *.micro_router*.wlan[0].radioType "\"APSKScalarRadio\""
+param ARPTest.micro_router0.routingTable.routingFile "\"whost0.mrt\""
+param ARPTest.micro_router1.routingTable.routingFile "\"whost1.mrt\""
+
+vector 15  ARPTest.micro_router0.wlan[0].mac.ctn[0]  state:vector  ETV
+attr interpolationmode  none
+attr source  stateChanged
+attr title  "contention state, vector"
+vector 0  ARPTest.micro_router0.energyStorage  powerConsumption:vector  ETV
+attr interpolationmode  sample-hold
+attr source  powerConsumptionChanged
+attr title  "Power consumption, vector"
+vector 12  ARPTest.micro_router0.wlan[0].radio  radioMode:vector  ETV
+attr interpolationmode  sample-hold
+attr source  radioModeChanged
+attr title  "Radio mode, vector"
+vector 13  ARPTest.micro_router0.wlan[0].radio  receptionState:vector  ETV
+attr interpolationmode  sample-hold
+attr source  receptionStateChanged
+attr title  "Radio reception state, vector"
+vector 30  ARPTest.micro_router0.eth[1].mac  rxPkOk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, vector(packetBytes)"
+vector 31  ARPTest.micro_router0.eth[1].mac  passedUpPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, vector(packetBytes)"
+vector 39  ARPTest.micro_router0.eth[1].encap  decapPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  decapPk
+attr title  "packets decapsulated, vector(packetBytes)"
+vector 4  ARPTest.micro_router0.networkLayer.arp  sentReply:vector  ETV
+attr title  "ARP replies sent, vector"
+vector 38  ARPTest.micro_router0.eth[1].encap  encapPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  encapPk
+attr title  "packets encapsulated, vector(packetBytes)"
+vector 34  ARPTest.micro_router0.eth[1].mac  rxPkFromHL:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, vector(packetBytes)"
+vector 29  ARPTest.micro_router0.eth[1].mac  txPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, vector(packetBytes)"
+vector 3  ARPTest.micro_router0.networkLayer.arp  sentReq:vector  ETV
+attr title  "ARP request sent, vector"
+vector 26  ARPTest.micro_router0.eth[0].encap  encapPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  encapPk
+attr title  "packets encapsulated, vector(packetBytes)"
+vector 22  ARPTest.micro_router0.eth[0].mac  rxPkFromHL:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, vector(packetBytes)"
+vector 17  ARPTest.micro_router0.eth[0].mac  txPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, vector(packetBytes)"
+vector 10  ARPTest.micro_router0.wlan[0].mac  rcvdPkFromHL:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, vector(packetBytes)"
+vector 9  ARPTest.micro_router0.wlan[0].mac  sentDownPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToLower
+attr title  "packets sent to lower layer, vector(packetBytes)"
+vector 2  ARPTest.micro_router0.energyStorage  residualCapacity:vector  ETV
+attr interpolationmode  linear
+attr source  residualCapacityChanged
+attr title  "Residual capacity, vector"
+vector 14  ARPTest.micro_router0.wlan[0].radio  transmissionState:vector  ETV
+attr interpolationmode  sample-hold
+attr source  transmissionStateChanged
+attr title  "Radio transmission state, vector"
+vector 18  ARPTest.micro_router0.eth[0].mac  rxPkOk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, vector(packetBytes)"
+vector 19  ARPTest.micro_router0.eth[0].mac  passedUpPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, vector(packetBytes)"
+vector 27  ARPTest.micro_router0.eth[0].encap  decapPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  decapPk
+attr title  "packets decapsulated, vector(packetBytes)"
+0	0	0	0
+2	93485	4.45022644872	-0.00890045289744
+2	93487	4.450247707979	-0.00890257882334
+2	94394	4.492294848099	-0.00898667310358
+2	94398	4.492316107358	-0.00898879902948
+3	93386	4.44600512	1
+4	92950	4.42570512	1
+9	93484	4.45022644872	76
+9	94393	4.492294848099	76
+10	93482	4.45022644872	76
+10	94391	4.492294848099	76
+12	0	0	0
+12	0	0	2
+12	93485	4.45022644872	3
+12	93488	4.450247707979	2
+12	94394	4.492294848099	3
+12	94399	4.492316107358	2
+13	0	0	1
+13	93485	4.45022644872	0
+13	93488	4.450247707979	1
+13	94394	4.492294848099	0
+13	94399	4.492316107358	1
+14	93485	4.45022644872	1
+14	93486	4.45022644872	2
+14	93487	4.450247707979	1
+14	93488	4.450247707979	0
+14	94394	4.492294848099	1
+14	94395	4.492294848099	2
+14	94398	4.492316107358	1
+14	94399	4.492316107358	0
+15	0	0	0
+15	0	0	0
+15	0	0	0
+15	0	0	0
+15	93482	4.45022644872	0
+15	93482	4.45022644872	2
+15	93483	4.45022644872	2
+15	93483	4.45022644872	3
+15	93485	4.45022644872	3
+15	93485	4.45022644872	3
+15	93487	4.450247707979	3
+15	93487	4.450247707979	0
+15	93488	4.450247707979	0
+15	93488	4.450247707979	0
+15	94391	4.492294848099	0
+15	94391	4.492294848099	2
+15	94392	4.492294848099	2
+15	94392	4.492294848099	3
+15	94394	4.492294848099	3
+15	94394	4.492294848099	3
+15	94398	4.492316107358	3
+15	94398	4.492316107358	0
+15	94399	4.492316107358	0
+15	94399	4.492316107358	0
+17	93390	4.44601088	64
+17	93850	4.46701088	64
+18	93844	4.46700512	0
+18	94294	4.48800512	0
+19	93844	4.46700512	0
+19	94294	4.48800512	0
+22	93389	4.44600512	64
+22	93849	4.46700512	64
+26	93388	4.44600512	28
+26	93848	4.46700512	20
+27	93845	4.46700512	28
+27	94295	4.48800512	20
+29	92954	4.42571088	64
+29	94299	4.48801088	64
+30	92947	4.42570512	0
+30	93384	4.44600512	0
+31	92947	4.42570512	0
+31	93384	4.44600512	0
+34	92953	4.42570512	64
+34	94298	4.48800512	64
+38	92952	4.42570512	28
+38	94297	4.48800512	20
+39	92948	4.42570512	28
+39	93385	4.44600512	20

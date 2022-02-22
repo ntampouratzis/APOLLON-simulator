@@ -1,0 +1,8 @@
+Replace the following files:
+
+file: APOLLON/ptII/org/hlacerti/lib/HlaManager1_3.java
+file: APOLLON/ptII/org/hlacerti/lib/HlaSubscriber.java
+
+compilation: 
+1) cd /home/apollon/APOLLON/ptII
+2) ant

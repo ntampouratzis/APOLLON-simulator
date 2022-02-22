@@ -1,0 +1,22 @@
+1. Install the Java Runtime Environment (JRE):
+sudo apt-get install default-jre
+
+2. Install the JDK with the following command:
+sudo apt-get install default-jdk
+
+NOTE: In Ubuntu 16.04 the default java version is:
+$  java -version
+openjdk version "1.8.0_242"
+which is proposed by the current PtII installation instructions:
+https://cdn.rawgit.com/icyphy/ptII/master/doc/install_index.htm
+
+3. Clone the latest Ptolemy II project from github:
+git clone https://github.com/icyphy/ptII.git
+
+4. Build from source:
+cd ptII
+export PTII=$HOME/APOLLON/ptII
+rm -f config.*
+./configure
+PTII/bin/ant (or "make fast all")
+PTII/bin/vergil
