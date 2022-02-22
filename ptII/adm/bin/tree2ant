@@ -1,0 +1,50 @@
+#!/bin/sh
+# Convert a ptII subdirectory tree to an ant rule to create a jar
+#
+
+findit() {
+   find . -name "$1" | grep -v package.html | grep -v junit | xargs -n 1 dirname | sort | uniq | \
+       awk -v extension=$1 '{dir=substr($0, 2, length($0)-1);
+             print "        <include name=\"XXXChangeMeXXX" dir "/" extension "\"/>";
+       }'
+}
+
+includes=/tmp/tree2ant.$$
+findit "*.c" > $includes
+findit "*.class" >> $includes
+findit "*.cpp" >> $includes
+findit "*.css" >> $includes
+findit "*.data" >> $includes
+findit "*.dtd" >> $includes
+findit "*.gif" >> $includes
+findit "*.h" >> $includes
+findit "*.html" >> $includes
+findit "*.htm" >> $includes
+findit "*.in" >> $includes
+findit "*.j" >> $includes
+findit "*.jpg" >> $includes
+findit "*.jpeg" >> $includes
+findit "*.js" >> $includes
+findit "*.json" >> $includes
+findit "*akefile" >> $includes
+findit "*.md" >> $includes
+findit ".npmignore" >> $includes
+findit "*.pdf" >> $includes
+findit "*.pegjs" >> $includes
+findit "*.png" >> $includes
+findit "*.rs" >> $includes
+findit "*.rst" >> $includes
+findit "*.sh" >> $includes
+findit "*.toml" >> $includes
+findit "*.txt" >> $includes
+findit "*.wav" >> $includes
+findit "*.xml" >> $includes
+findit "*.xsl" >> $includes
+findit "*.yml" >> $includes
+
+sort $includes
+# | awk '{
+#             print "      <fileset dir=\"${basedir}\">";
+#             print $0
+#             print "      </fileset>"
+#   }'

@@ -1,0 +1,50 @@
+<!-- $Id$ -->
+<html>
+  <head>
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+    <title>Mac OS X: Setting up Eclipse to manage your Ptolemy II development Environment</title>
+    <link href="../../../doc/default.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <h1><a name="SettingUp">Setting up Eclipse to manage your Ptolemy II development environment</a></h1>
+
+    <p>Eclipse will manage your ptII code tree as a <em>project</em> called
+      the ptII project.  </p>
+    <p>The Ptolemy II source code is available in two formats:</p>
+    <ol>
+      <li>The stable release - download a tar file that is created annually.</li>
+      <li>The development version - access the Ptolemy group version control system, available via Github.</li>
+    </ol>
+    <p>The advantage of the tar file is that it is tested and stable.</p>
+    <p>The advantage of the development version is that it has the
+      latest and greatest changes.  However, there could be bugs and
+      instability in the development version.
+
+    <!--/eclipseSimple-->
+    <p>There two ways to set up the ptII project:</p>
+    <ol>
+      <li> <a href="noVC.htm" target="main">Eclipse is <b>unaware</b> of the version control aspects of the project.</a>
+	<br/>If you are downloading the source from major Ptolemy release,
+	and don't want to update regularly, or you do not have network access, then use this choice.
+	<br/><i>(No <code>git</code> from the command line).</i>
+      </li>
+
+      <li> <a href="eclipseVC.htm" target="main">Eclipse is <b>aware</b> of the Version Control aspects of the project.</a>
+        <br/><i>(Use both the Eclipse Git plugin and optionally the
+	shell <code>git</code> command).</i>
+
+	<br/>This choice is the <b>preferred</b> choice for collaborating with the Ptolemy group because it means that your Ptolemy II tree can get recent changes.
+	<br/>The downside is that that the development tree is under development, so there may be bugs or instability.
+
+      </li>
+
+    </ol>
+    <!--eclipseSimple-->
+
+
+    <!--/eclipseSimple-->
+
+    <p>Please choose <b>one</b> of the methods above to set up Eclipse for Ptolemy II.
+
+  </body>
+</html>

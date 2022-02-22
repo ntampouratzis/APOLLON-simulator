@@ -1,0 +1,92 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE entity PUBLIC "-//UC Berkeley//DTD MoML 1//EN"
+    "http://ptolemy.eecs.berkeley.edu/xml/dtd/MoML_1.dtd">
+<entity name="SynchronizeToRealTime" class="ptolemy.actor.TypedCompositeActor">
+    <property name="_createdBy" class="ptolemy.kernel.attributes.VersionAttribute" value="11.1.devel">
+    </property>
+    <property name="enableBackwardTypeInference" class="ptolemy.data.expr.Parameter" value="false">
+    </property>
+    <property name="Annotation2" class="ptolemy.vergil.kernel.attributes.TextAttribute">
+        <property name="textColor" class="ptolemy.actor.gui.ColorAttribute" value="{0.0, 0.0, 0.0, 1.0}">
+        </property>
+        <property name="text" class="ptolemy.kernel.util.StringAttribute" value="This model runs a federation with three federates. The first two federates&#10;communicate. The third, clockHLA, does not communicate, but synchronizes&#10;to real time. This third federate slows the execution of the first two because&#10;it is regulating the passage of time and synchronizing it to real time.">
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[280.0, 165.0]">
+        </property>
+    </property>
+    <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={74, 247, 1244, 632}, maximized=false}">
+    </property>
+    <property name="_vergilSize" class="ptolemy.actor.gui.SizeAttribute" value="[1010, 522]">
+    </property>
+    <property name="_vergilZoomFactor" class="ptolemy.data.expr.ExpertParameter" value="1.2311178376275658">
+    </property>
+    <property name="_vergilCenter" class="ptolemy.data.expr.ExpertParameter" value="{547.1349650846814, 364.122742748357}">
+    </property>
+    <property name="Annotation3" class="ptolemy.vergil.kernel.attributes.TextAttribute">
+        <property name="text" class="ptolemy.kernel.util.StringAttribute" value="The ClockDisplayer federate is the first one to be launched: it launches the RTIG&#10;process.&#10;&#10;The ClockHLA federate is the register of the synchronization point used during the &#10;initialization of the simulation to synchronize all federates. This federate must be the&#10;last one to be launched.&#10;&#10;During the execution of this simulation, you can remove the synchronizeToRealTime attribute&#10;deployed in the ClockHLA federate (see ClockHLA.xml model). This action will speed up the&#10;execution of the other two federates.">
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[280.0, 275.0]">
+        </property>
+    </property>
+    <property name="Annotation5" class="ptolemy.vergil.kernel.attributes.TextAttribute">
+        <property name="textSize" class="ptolemy.data.expr.Parameter" value="8">
+        </property>
+        <property name="textColor" class="ptolemy.actor.gui.ColorAttribute" value="{0.4,0.4,0.4,1.0}">
+        </property>
+        <property name="text" class="ptolemy.kernel.util.StringAttribute" value="Author: Gilles Lasnier (SUPAERO - ISAE).">
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[675.0, 435.0]">
+        </property>
+    </property>
+    <property name="Director" class="ptolemy.actor.Director">
+        <doc>Simple director that executes actors in the order in which they were created.</doc>
+        <property name="iterations" class="ptolemy.data.expr.Parameter" value="0">
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[200.0, 190.0]">
+        </property>
+    </property>
+    <entity name="clockDisplayer" class="ptolemy.vergil.actor.lib.VisualModelReference">
+        <property name="modelFileOrURL" class="ptolemy.actor.parameters.FilePortParameter" value="clockDisplayer.xml">
+        </property>
+        <property name="executionOnFiring" class="ptolemy.data.expr.StringParameter" value="run in a new thread">
+        </property>
+        <property name="lingerTime" class="ptolemy.data.expr.Parameter" value="1000L">
+        </property>
+        <property name="spawnSeparateModels" class="ptolemy.data.expr.Parameter" value="false">
+        </property>
+        <property name="openOnFiring" class="ptolemy.data.expr.StringParameter" value="open in Vergil">
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[190.0, 250.0]">
+        </property>
+    </entity>
+    <entity name="clockTransmitter" class="ptolemy.vergil.actor.lib.VisualModelReference">
+        <property name="modelFileOrURL" class="ptolemy.actor.parameters.FilePortParameter" value="clockTransmitter.xml">
+        </property>
+        <property name="executionOnFiring" class="ptolemy.data.expr.StringParameter" value="run in a new thread">
+        </property>
+        <property name="lingerTime" class="ptolemy.data.expr.Parameter" value="1000L">
+        </property>
+        <property name="spawnSeparateModels" class="ptolemy.data.expr.Parameter" value="false">
+        </property>
+        <property name="openOnFiring" class="ptolemy.data.expr.StringParameter" value="open in Vergil">
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[190.0, 310.0]">
+        </property>
+    </entity>
+    <entity name="clockHla" class="ptolemy.vergil.actor.lib.VisualModelReference">
+        <property name="modelFileOrURL" class="ptolemy.actor.parameters.FilePortParameter" value="clockHLA.xml">
+        </property>
+        <property name="lingerTime" class="ptolemy.data.expr.Parameter" value="1000L">
+        </property>
+        <property name="spawnSeparateModels" class="ptolemy.data.expr.Parameter" value="false">
+        </property>
+        <property name="openOnFiring" class="ptolemy.data.expr.StringParameter" value="open in Vergil">
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[190.0, 370.0]">
+        </property>
+    </entity>
+    <entity name="Stop" class="ptolemy.actor.lib.Stop">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[185.0, 430.0]">
+        </property>
+    </entity>
+</entity>

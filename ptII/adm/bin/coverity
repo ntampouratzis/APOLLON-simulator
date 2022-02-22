@@ -1,0 +1,62 @@
+#!/bin/sh
+# Upload stats to coverity.
+
+echo "$PTII/adm/bin/coverity started at `date`"
+
+coverityPtII=/tmp/coverityPtII
+
+if [ ! -d $coverityPtII ]; then
+    mkdir $coverityPtII
+fi
+
+export PTII=$coverityPtII/ptII
+if [ ! -d $PTII ]; then
+    cd $coverityPtII
+    git clone --depth=50 --branch=master https://github.com/icyphy/ptII.git
+fi
+
+if [ ! -d $PTII ]; then
+    echo "$0: Could not find $PTII"
+    exit 2
+fi
+
+cd $PTII
+./configure
+ant clean
+# Don't run ant here, the cov-build process will do that for us.
+
+# Remove files that define setTimeout() that cause this warnings.
+accessorsDir=$PTII/org/terraswarm/accessor/accessors
+rm -f $accessorsDir/web/hosts/duktape/duktape/examples/eventloop/ecma_eventloop.js
+rm -f $accessorsDir/web/hosts/duktape/duktape2/examples/eventloop/ecma_eventloop.js
+rm -f $accessorsDir/web/hosts/duktape/eduk/c_eventloop.js
+rm -f $accessorsDir/web/hosts/duktape/eduk2/c_eventloop.js
+
+rm -f accessors/web/node_modules/@accessors-hosts/duktape/duktape2/examples/eventloop/ecma_eventloop.js 
+rm -f accessors/web/node_modules/@accessors-hosts/duktape/eduk2/c_eventloop.js
+
+rm -rf reports/cov-int
+mkdir reports/cov-int
+
+
+# Use --fs-capture-search so that we get JavaScript and Java.  See https://scan.coverity.com/download?tab=other
+/home/hudson/src/cov-analysis-linux64/bin/cov-build --dir reports/cov-int --fs-capture-search ./ ant
+
+(cd $PTII/reports; tar czvf myproject.tgz cov-int)
+
+VERSION=`egrep ^PTVERSION $PTII/makefile | awk '{print $NF}'`.`date +%Y%M%d`
+
+
+# Old:
+#curl --form project=Ptolemy\ II --form token=Z11RGxhJDN81JVxPjgszbw --form email=cxh@eecs.berkeley.edu  --form file=@reports/myproject.tgz --form version=$VERSION --form description=nightly http://scan5.coverity.com/cgi-bin/upload.py
+
+curl --form token=Z11RGxhJDN81JVxPjgszbw \
+  --form email=cxh@eecs.berkeley.edu \
+  --form file=@reports/myproject.tgz \
+  --form version="$VERSION" \
+  --form description="nightly" \
+  https://scan.coverity.com/builds?project=Ptolemy+II
+
+rm -rf $coverityPtII
+
+echo "$PTII/adm/bin/coverity ended at `date`"

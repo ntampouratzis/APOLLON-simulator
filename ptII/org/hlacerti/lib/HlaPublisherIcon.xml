@@ -1,0 +1,89 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE property PUBLIC "-//UC Berkeley//DTD MoML 1//EN"
+    "http://ptolemy.eecs.berkeley.edu/xml/dtd/MoML_1.dtd">
+<property name="HlaPublisherIcon" class="ptolemy.vergil.icon.EditorIcon">
+    <property name="Arrow" class="ptolemy.vergil.kernel.attributes.ArrowAttribute">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[-9.0, 12.0]">
+        </property>
+        <property name="x" class="ptolemy.data.expr.Parameter" value="-1.0">
+        </property>
+        <property name="arrowLength" class="ptolemy.data.expr.Parameter" value="16.0">
+        </property>
+        <property name="arrowWidth" class="ptolemy.data.expr.Parameter" value="22.0">
+        </property>
+    </property>
+    <property name="_vergilSize" class="ptolemy.actor.gui.SizeAttribute" value="[700, 524]">
+    </property>
+    <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={449, 90, 934, 634}, maximized=false}">
+    </property>
+    <property name="_vergilZoomFactor" class="ptolemy.data.expr.ExpertParameter" value="4.0">
+    </property>
+    <property name="_vergilCenter" class="ptolemy.data.expr.ExpertParameter" value="{0.0, 0.0}">
+    </property>
+    <property name="Annotation1" class="ptolemy.vergil.kernel.attributes.TextAttribute">
+        <property name="textSize" class="ptolemy.data.expr.Parameter" value="10">
+        </property>
+        <property name="textColor" class="ptolemy.actor.gui.ColorAttribute" value="{0.0, 0.0, 0.0, 1.0}">
+        </property>
+        <property name="text" class="ptolemy.kernel.util.StringAttribute" value="attr.:">
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[-8.0, -16.0]">
+        </property>
+    </property>
+	<property name="ParameterValue1" class="ptolemy.vergil.kernel.attributes.AttributeValueAttribute">
+        <property name="textSize" class="ptolemy.data.expr.Parameter" value="10">
+        </property>
+        <property name="textColor" class="ptolemy.actor.gui.ColorAttribute" value="{0.0, 0.0, 0.0, 1.0}">
+        </property>
+        <property name="attributeName" class="ptolemy.kernel.util.StringAttribute" value="attributeName">
+        </property>
+        <property name="displayWidth" class="ptolemy.data.expr.Parameter" value="20">
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[23.0, -16.0]">
+        </property>
+    </property>
+    <property name="Annotation2" class="ptolemy.vergil.kernel.attributes.TextAttribute">
+        <property name="textSize" class="ptolemy.data.expr.Parameter" value="10">
+        </property>
+        <property name="textColor" class="ptolemy.actor.gui.ColorAttribute" value="{0.0, 0.0, 0.0, 1.0}">
+        </property>
+        <property name="text" class="ptolemy.kernel.util.StringAttribute" value="class:">
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[-8.0, -8.0]">
+        </property>
+    </property>
+    <property name="ParameterValue2" class="ptolemy.vergil.kernel.attributes.AttributeValueAttribute">
+        <property name="textSize" class="ptolemy.data.expr.Parameter" value="10">
+        </property>
+        <property name="textColor" class="ptolemy.actor.gui.ColorAttribute" value="{0.0, 0.0, 0.0, 1.0}">
+        </property>
+        <property name="attributeName" class="ptolemy.kernel.util.StringAttribute" value="classObjectName">
+        </property>
+        <property name="displayWidth" class="ptolemy.data.expr.Parameter" value="20">
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[23.0, -8.0]">
+        </property>
+    </property>
+    <property name="Annotation3" class="ptolemy.vergil.kernel.attributes.TextAttribute">
+        <property name="textSize" class="ptolemy.data.expr.Parameter" value="10">
+        </property>
+        <property name="textColor" class="ptolemy.actor.gui.ColorAttribute" value="{0.0, 0.0, 0.0, 1.0}">
+        </property>
+        <property name="text" class="ptolemy.kernel.util.StringAttribute" value="inst.:">
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[-8.0, 0.0]">
+        </property>
+    </property>
+    <property name="ParameterValue3" class="ptolemy.vergil.kernel.attributes.AttributeValueAttribute">
+        <property name="textSize" class="ptolemy.data.expr.Parameter" value="10">
+        </property>
+        <property name="textColor" class="ptolemy.actor.gui.ColorAttribute" value="{0.0, 0.0, 0.0, 1.0}">
+        </property>
+        <property name="attributeName" class="ptolemy.kernel.util.StringAttribute" value="classInstanceName">
+        </property>
+        <property name="displayWidth" class="ptolemy.data.expr.Parameter" value="25">
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[23.0, 0.0]">
+        </property>
+    </property>
+</property>

@@ -1,0 +1,322 @@
+# Configure requires $PTII
+env:
+  matrix:
+    # Run separate jobs with these variables.  The name of the
+    # variable corresponds with the target name in $PTII/build.xml and
+    # should be alphabetical.
+    - PT_TRAVIS_BUILD_ALL=true
+    # Don't include PT_TRAVIS_CLEAN=true here, we run it as a separate
+    # clean stage before running the tests.
+    # - PT_TRAVIS_CLEAN=true
+    - PT_TRAVIS_DOCS=true
+    # - PT_TRAVIS_PRIME_INSTALLER=true
+    - PT_TRAVIS_TEST_INSTALLERS=true
+    - PT_TRAVIS_TEST_CAPECODE1_XML=true
+    - PT_TRAVIS_TEST_CAPECODE2_XML=true
+    - PT_TRAVIS_TEST_CAPECODE3_XML=true
+    - PT_TRAVIS_TEST_CORE1_XML=true
+    - PT_TRAVIS_TEST_CORE2_XML=true
+    - PT_TRAVIS_TEST_CORE3_XML=true
+    - PT_TRAVIS_TEST_CORE4_XML=true
+    - PT_TRAVIS_TEST_CORE5_XML=true
+    - PT_TRAVIS_TEST_CORE6_XML=true
+    - PT_TRAVIS_TEST_CORE7_XML=true
+    - PT_TRAVIS_TEST_EXPORT1_XML=true
+    - PT_TRAVIS_TEST_EXPORT2_XML=true
+    - PT_TRAVIS_TEST_EXPORT3_XML=true
+    - PT_TRAVIS_TEST_EXPORT4_XML=true
+    - PT_TRAVIS_TEST_EXPORT5_XML=true
+    - PT_TRAVIS_TEST_EXPORT6_XML=true
+    - PT_TRAVIS_TEST_EXPORT7_XML=true
+    #   - PT_TRAVIS_TEST_REPORT_SHORT=true
+  global:
+    # Environment variables shared between all builds(in alphabetical order)
+    - PTII=${TRAVIS_BUILD_DIR}
+
+    - ANT_OPTS=-Xmx2048m
+    - BCVTB_HOME=${TRAVIS_BUILD_DIR}/lbnl
+
+    # GeoCoding
+    -  secure: "kw7ZvdNDOSg6i4+b0oaSwuZbmuQKli87FjpS5UfOL3LdhjLaJlhft8aDc2ZLuiDxtCmB3X45Y+2M+ncqlRZULj0nRxz9OnVD6nQdgM2FPKBBmgZ2Z9/e/4MwD/3GcpnNs9rmW+3DXDMbMSc7nqYgYDKwws9x7KvF3hzrs0jj1ZvxUV/F1O9jCyyKzPJgaW46mQ9VrZi0xgl9Qn+8hccx8Z9G8XL/A3M/dCwaKUbaGk56+63GLNX62T20LQOQCJVgSztVkV/GLgmAnekwPBWuQ9UvaaQAiJFRbWpWz7qzgz5qL94zhHeew79iv+0jPgyjgTQSc0Sv2BNuTfY0GZbr5yvHFgxPNcvtCBwHmqQLB5r6VT0kuYaXXIMNs2yvU0DQvgnIVen9PFR9Euui3/qKY5/cHyYbI8n+2xtZHnideR3C9lbWSOih4H58f0W3Gf9jgPeCGI1jRuuR+fSUxD2pkHMDskBvEodlrKc+g0mSdybIuPGF0l8qMPyIuRMbuMgHaJA4zYBmKSUrL7w599SuteKKbZXcLXL8YkEjE8old+q2Ajdu9UA5NRFEmqs/YtqaJEBZnMh3IFCsXDXlfQQWFLuC9L1ShBC2tJYei8N7aEuuPECBelPjKr3F+QRpAjpRrCvU9bxwWsfJqBARQc2Ktsxg1RHzxGERpBSWfvT9YlA="
+
+    - LD_LIBRARY_PATH=/usr/lib/jni:/usr/local/share/OpenCV/java/:/usr/share/OpenCV/java:${LD_LIBRARY_PATH}
+    - PT_NO_NET=true
+
+    # CERTI_HOME is set by org/hlacerti/build-certi.sh below, so we use a slightly different variable here.
+    - CERTI_HOME_TRAVIS=${HOME}/pthla/certi-tools
+    - PATH=${PTII}/bin:${CERTI_HOME_TRAVIS}/bin:${PATH}
+
+    # Heartbeat
+    - secure: "yFRoAj3VTJs0ue19oKxJ8qxjM/LbthiJFx/iTJiUK1PPVWeOQpBlraXnhSEtefxNq7KXnXJY1OjQpTbr+j9hFipxOjoGgAGU7rv3iOCKP9ttdlnzUrsyu7iXSx/xoyQPRpnCiJBrgl839PzpolzF0dGeTfwtjXKO0d4YF8YUn7a9QJesqh0vxjnmxcHcdfJnaufzw9uUQpggrJInrtnp8B+WWH24RJpeJhlE/cOzi1SZIlhsCBaNGr11N6iJWoUvyv/lkw1fbVJRgUIRP5kN9bwAUQ7azcXB0cpgpa3RHP8fybBGGM2yVhR+RNwxuLKwF6Zqm38qq3ty1YVSWprgX/HGvAeyC0voFyuj3XhvFqMKSICNB7kjIfjbnjRrPgbIiCDCXukFejII+jvJ7bXgmZqgk7SBP8FtugEX4hIMy6PoxUf9pLPRyUAugqPGbNg5SSE2zLUKGtnT/VizeMeHZjd0tArlKdZkN6s1+oO3EmG5LtyYtwczVIsc6YxXunyXxZfNxI1GBfUDHyAKRMhK0JXBIrj/aLSs11KmkNOytU3qghXl8oChLbnV2YnkwPl2J6qCcYNlubVpHlsQgO51LuPaU3tpvxp4TZ0qZhTPvmGucqfD/tjL/ztK+t0FtvElOZZd981wy9Irok9m1X19tavY4dsaiVTDzehQZUeaxaY="
+
+    # SpaceCadet
+    - secure: "rF8A4+P8J7oQe7VUOxD1Ei70U04kZu5RBHI9I2PICQwBM5op8Jl+sG/me83FH1txDEv2q3dov8BjbFotZGRQ//wHntmkvzGomxUkjiMGtg42KxC0uV1lo7kSWsjD4Fap4SivDiT9+1BQpd/2eLtwhvQETeM4QZE/t7ix5BKqelkiu3pfCqQXvUK30/+C0R4IjXsrNQXRjueb5a2Aor2RoO9NGrLpANAIp1479j6oa/qwQXCLfhg58JkR8qSxSxiLGHrdZHyIOOthTtHNu9BRqpYgGeA12I4YktilZJt0Dr2Tw4WHgxXX6LqYcvb531PpeKbfjCvkhzIgYG/bB7OmcuZ2kLCH91ubyNuq8AI1JFg6892zsYUeP24xT/F0twJ/xrZCSmMMQ6pXtzPRns/bKcpzmmgRUguFWdbKVOggj9Z7HRG/TxZnUmUdrR98DkOoOdC/lYwYP7LhOiciGHUdFSu0T1ep1EcQGCYHz2z9bUY/9OQqXtohfG4FI/yyFEJ6EEnObPKSypcf7RweR132RLTQmJDu+akD8bwDgas2Rr2YDMFK0oypejU2HawXcdEHUhHwZWBNzhF2nOoMTyi0PvLivuXqlzgxrEc42vru6dx5xIJI/lVvDHvtAyMDj36EAQTlRquOBDD0o+jgXIM3dZJD160Xs676gD6B7s7bzOU="
+
+    - TRAVIS_TAG=nightly
+
+    # Weather accessor
+    - secure: "XFK6IofbdwwDu2VOu7OrJXFr62C+iYO+EPan+4MfrkBlW3gBVRdB7zbcOtgvFeqVbpokahsq0fxe6OuCPNC6HTZRP0RgMhS5u1uF9UGvRY+07zia3Xn2MiRffySwLuiS6cS2CxHKxfbMSVouovHUxTXQse0CLyydURCk19gLtoCDAUYzv1EI2HBDqR0zep7dzXWVAuBrIUuRwveYhQFbKlbmOtv2Kq9rZyjxZZS6/3DWhjSuuWGNXGRwZQoJgCxulya0COtvBzEjGY0RYirKuTnkMV94fZoPK7UJH+drPwEjtTGYnsXuEwLrXZ0k4Xipogfqg8l7AgYWnswqgz03PwCvKP1kfQ4e9E/tvyYn8bs4ZSFjfFHV+XzMGU6Gi6gBso/fM07eBX1WZs6d9VY8uFGGqsdhKw6/aKlTldwnLJk2ClkVvLU1qFB+qpb+LLV30qJlbd0tsoMa0Nn9hbu5E3wxDWt2P1qmxRo57av8gJQRCDbvnveAe38cD/db3wNi5VFws+flC/x2orXnfUiyjPO/Y9WayfTLopusIicdYaydiPI/afakH3tVZds0C9kKAlRZPWvrq6/llTKcMmJqVTHO48wuFkU+pC5ziyIBDjGggfS1exqLX8ahiM2QOfABIQh1qw6D+x/M1BJ85ul/2vxPAEjHmA7Fmg0Usa4X0G4="
+
+
+language: node_js
+
+# Node 8 breaks npm horribly, see http://www.accessors.org/wiki/Notes/Npm5
+node_js:
+  - "7"
+
+addons:
+  ssh_known_hosts: localhost
+
+# Need X11 to create the DOP Center map and for testing.
+before_install:
+  # The following broke as of June, 2019, and is replaced with the services entry.
+  # - export DISPLAY=:99.0
+  # - sh -e /etc/init.d/xvfb start
+  # Add npm to path for AccessorSSHCodeGenerator.tcl
+  - echo "export PTII=$PTII; export PATH=$PTII/bin:\${PATH}" >> ~/.bashrc
+  - echo "export PTII=$PTII; export PATH=$PTII/bin:\${PATH}" >> ~/.bash_profile
+  - cat ~/.bashrc
+  - cat ~/.bash_profile
+
+# The following recommended solution does not seem
+dist: xenial
+services:
+  - xvfb
+
+install:
+  # We keep logs in a directory to avoid the 10k line problem.
+  - mkdir -p $PTII/logs $PTII/reports/junit
+  - echo $HOME
+  - echo "Created by Travis-ci" > $HOME/README.md
+  - ls -l $HOME
+  
+  # Avoid "Package libdc1394-22-dev is not available, but is referred to by another package."
+  # See https://github.com/travis-ci/travis-ci/issues/5221
+  - sudo apt-get update 
+
+  # Below are the packages that are needed, in alphabetical order:
+  #   coreutils for timeout, used by ptIITravisBuild.sh
+  #   genisoimage for building Darwin dmg files under Linux.
+  #   eclipse and eclipse-rcp for backtracking.
+  #   Java3D
+  #   libv4l for  Bridj for the camera.
+  #   p7zip-full for installing jogl as part of the installers.
+  #   pdflatex for the DOP Center image.
+  - sudo apt-get install -y coreutils genisoimage eclipse eclipse-rcp libjava3d-java libv4l-dev p7zip-full texlive-latex-base || true
+
+  # Install JAI.  If the wget fails, then don't stop the build.
+  #- if [ ! -f $PTII/vendors/jai-1_1_2_01/lib/jai_core.jar ]; then wget --quiet --no-cookies --header Cookie:\ oraclelicense=accept-securebackup-cookie http://download.oracle.com/otn-pub/java/jai/1.1.2_01-fcs/jai-1_1_2_01-lib-linux-i586.tar.gz -O /tmp/jai.tar.gz || true; if [ -f /tmp/jai.tar.gz ] ; then (cd vendors; tar -zxvf /tmp/jai.tar.gz) fi; fi
+  - if [ ! -f $PTII/vendors/jai-1_1_3/lib/jai_core.jar ]; then wget --quiet --no-cookies --header Cookie:\ oraclelicense=accept-securebackup-cookie http://download.java.net/media/jai/builds/release/1_1_3/jai-1_1_3-lib-linux-amd64.tar.gz -O /tmp/jai.tar.gz || true; if [ -f /tmp/jai.tar.gz ] ; then (cd vendors; tar -zxvf /tmp/jai.tar.gz) fi; fi
+
+  #######
+  # Install JavaFX.  If the wget fails, then don't stop the build.
+  # This is the JavaFX for openjdk11.  If the version of Java changes, then
+  # change JavaFX as well
+  - ls -l $PTII/vendors || true
+  - ls -l $PTII/vendors/javafx || true
+  - if [ ! -d $PTII/vendors/javafx ]; then echo "Creating $PTII/vendors/javafx"; mkdir $PTII/vendors/javafx; fi
+  - if [ ! -d $PTII/vendors/javafx/javafx-sdk-11.0.2 ]; then wget --quiet -O /tmp/javafx.zip 'http://gluonhq.com/download/javafx-11-0-2-sdk-linux/' || true; if [ -f /tmp/javafx.zip ] ; then (cd vendors/javafx; unzip /tmp/javafx.zip) fi; fi
+  - ls -l $PTII/vendors/javafx || true
+
+  #######
+  # Install Jogl, which is needed for Java3D.
+  # - ls -l $PTII/vendors/jogl/lib || true
+
+  # - if [ ! -d $PTII/vendors/jogl/lib/natives/linux-amd64 ]; then mkdir -p $PTII/vendors/jogl/lib/natives/linux-amd64; fi
+  
+  # - if [ ! -f $PTII/vendors/jogl/lib/natives/linux-amd64/gluegen-rt-natives-linux-amd64.jar ]; then wget --quiet -O $PTII/vendors/jogl/lib/natives/linux-amd64/gluegen-rt-natives-linux-amd64.jar https://jogamp.org/deployment/v2.3.2/jar/gluegen-rt-natives-linux-amd64.jar || true; fi 
+
+  # FIXME: We must unjar so that the shared libraries are found.
+  - jar -xvf $PTII/vendors/jogl/lib/natives/linux-amd64/gluegen-rt-natives-linux-amd64.jar || true
+
+  # - if [ ! -f $PTII/vendors/jogl/lib/natives/linux-amd64/jogl-all-natives-linux-amd64.jar ]; then wget --quiet -O $PTII/vendors/jogl/lib/natives/linux-amd64/jogl-all-natives-linux-amd64.jar wget https://jogamp.org/deployment/v2.3.2/jar/jogl-all-natives-linux-amd64.jar || true; fi
+
+  # FIXME: We must unjar so that the shared libraries are found.
+  - jar -xvf $PTII/vendors/jogl/lib/natives/linux-amd64/jogl-all-natives-linux-amd64.jar || true
+
+  - ls -lR $PTII/vendors/jogl || true
+
+  #######
+  # Install JMF.  If the wget fails, then don't stop the build.
+  - ls $PTII/vendors/JMF-2.1.1e || true
+  - if [ ! -f $PTII/vendors/JMF-2.1.1e/lib/jmf.jar ]; then wget --quiet --no-cookies --header Cookie:\ oraclelicense=accept-securebackup-cookie http://download.oracle.com/otn-pub/java/jmf/2.1.1e/jmf-2_1_1e-alljava.zip -O /tmp/jmf.zip || true; if [ -f /tmp/jmf.zip ] ; then (cd vendors; unzip /tmp/jmf.zip) fi; fi
+
+  #######
+  # Install Sphinx for the speech recognition accessor
+  - if [ ! -d $PTII/vendors/misc/sphinx4 ]; then mkdir $PTII/vendors/misc/sphinx4; fi
+  - if [ ! -f $PTII/vendors/misc/sphinx4/sphinx4-core-5prealpha.jar ]; then wget --quiet -O $PTII/vendors/misc/sphinx4/sphinx4-core-5prealpha.jar 'https://oss.sonatype.org/service/local/artifact/maven/redirect?r=releases&g=net.sf.phat&a=sphinx4-core&v=5prealpha&e=jar' || true; fi
+  - if [ ! -f $PTII/vendors/misc/sphinx4/sphinx4-data-5prealpha.jar ]; then wget --quiet -O $PTII/vendors/misc/sphinx4/sphinx4-data-5prealpha.jar 'https://oss.sonatype.org/service/local/artifact/maven/redirect?r=releases&g=net.sf.phat&a=sphinx4-data&v=5prealpha&e=jar' || true; fi
+
+  # Uncomment the next line to flush the cache for this file under test.export2.xml
+  # - if [ "$PT_TRAVIS_TEST_EXPORT2_XML" = true ]; then  wget -O $PTII/vendors/misc/sphinx4/sphinx4-data-5prealpha.jar 'https://oss.sonatype.org/service/local/artifact/maven/redirect?r=releases&g=net.sf.phat&a=sphinx4-data&v=5prealpha&e=jar' ; jar -tvf $PTII/vendors/misc/sphinx4/sphinx4-data-5prealpha.jar || true; fi
+
+  # Needed for building installers.
+  - sudo ln -s /bin/tar /usr/local/bin/tar
+
+  # Longer running installations:
+
+  # Use the Travis cache, see https://docs.travis-ci.com/user/cachingp
+  - sudo -E $PTII/org/ptolemy/opencv/travis_build_opencv.sh
+
+  # If ${CERTI_HOME_TRAVIS}/share/scripts/myCERTI_env.sh does not exist, then download and build CERTI.
+  # Building CERTI will result in a log of more than 10,000 lines, so we just show the last 50.
+  - sudo -E org/hlacerti/build-certi.sh >& /tmp/build-certi.out || true
+  - tail -50 /tmp/build-certi.out
+  - source ${CERTI_HOME_TRAVIS}/share/scripts/myCERTI_env.sh || true
+  # - echo "CERTI_HOME: $CERTI_HOME" || true
+
+  # Oddly, sometimes the Sphinx jar files end up being owned by root?
+  - sudo chown -R $USER $PTII/vendors || true
+
+  # List the contents of vendors and cached directories.
+  - ls $PTII/vendors
+  - ls -l $PTII/vendors/adm/gen-11.0/node || true
+  - ls -l $PTII/vendors/installer || true
+  - ls -l $PTII/vendors/jai-1_1_3 || true
+  - ls -l $PTII/vendors/javafx || true
+  - ls -l $PTII/vendors/JMF-2.1.1e || true
+  - ls -l $PTII/vendors/jogl || true
+  - ls -l $PTII/vendors/misc/sphinx4 || true
+  - ls -l $PTII/vendors/opencv || true
+  - ls -l $PTII/vendors/opencv/share/OpenCV/java || true
+  - ls -l $CERTI_HOME_TRAVIS || true
+
+  # Display environment variables
+  - env | sort
+  - which java || true
+  - ls /usr/local/lib/jvm || true
+  - java -version || true
+
+  - ./configure --enable-verbose
+
+  # Set up and test 'ssh localhost' for $PTII/ptolemy/cg/kernel/generic/accessor/test/AccessorSSHCodeGenerator.tcl
+  - ssh-keygen -N '' -f ~/.ssh/id_rsa
+  - cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
+  - ssh localhost cat /etc/issue
+  - sudo ln -s `which npm` /usr/local/bin/npm
+  - sudo ln -s `which node` /usr/local/bin/node
+  - ssh localhost  npm --version || true
+  
+script:
+  - ant clean >& $PTII/logs/ant_clean.txt
+ 
+  # travis_wait does not help here because we want to redirect the output of cmake.
+  # See https://github.com/travis-ci/travis-ci/issues/4190
+
+  # Echo status messages so that Travis knows we are alive.
+  # If you need to get status about available memory, insert "free -m; top -b -n 1 -o %MEM | head -20 " inside the loop.
+  - while sleep 1m; do echo "=====[ $SECONDS seconds still running ]====="; free -m; done &
+
+  - echo "About to call ptIITravisBuild.sh at $SECONDS seconds."
+
+  - $PTII/bin/ptIITravisBuild.sh $SECONDS
+
+  - echo "Done with ptIITravisBuild.sh at $SECONDS seconds."
+
+  # Killing background sleep loop.
+  - kill %1
+
+
+# Below is the order of the stages.
+# See https://docs.travis-ci.com/user/build-stages/ and
+# https://docs.travis-ci.com/user/build-stages/matrix-expansion/
+stages:
+  #
+  # The clean stage runs first to remove JUnit output from the gh-pages branch.
+  - clean
+  #
+  # Most of the targets in the test stage only run if the job is a cron
+  # job or RUN_TESTS=true.
+  - test
+  #
+  - report
+
+# Below are the definitions for the stages.
+jobs:
+  include:
+    #
+    # Clean the gh-pages branch of JUnit output before running the tests.
+    - stage: clean
+      script: $PTII/bin/ptIITravisBuild.sh $SECONDS
+      env: PT_TRAVIS_CLEAN=true
+    #
+    # The test stage uses the script target above.
+    ## - stage: test
+    #
+    # Run "ant junitreport" in the gh-branch, which uses a different
+    # build.xml than $PTII.
+    - stage: report
+      script: $PTII/bin/ptIITravisBuild.sh $SECONDS
+      env: PT_TRAVIS_JUNITREPORT=true
+
+# "Travis CI uploads the cache after the script phase of the build, but before either after_success or after_failure."
+# See https://docs.travis-ci.com/user/cachingg
+cache:
+  directories:
+    - $PTII/vendors/adm/gen-11.1/node
+    - $CERTI_HOME_TRAVIS
+    - $PTII/vendors/installer
+    - $PTII/vendors/jai-1_1_2_01
+    - $PTII/vendors/javafx
+    - $PTII/vendors/JMF-2.1.1e
+    - $PTII/vendors/misc/sphinx4
+    - $PTII/vendors/opencv
+
+deploy:
+  # If PT_TRAVIS_TEST_CORE2_XML == true, then copy the SpaceCadet files
+  - provider: releases
+    api_key: $GITHUB_TOKEN
+    file_glob: true
+    file:
+      - $PTII/ptolemy/domains/space/demo/DOPCenter/DOPCenter.png
+      - $PTII/ptolemy/domains/space/demo/DOPCenter/DOP.csv
+      - $PTII/ptolemy/domains/space/demo/DOPCenter/Placard.tex
+      - $PTII/ptolemy/domains/space/demo/DOPCenter/Placard.pdf
+    on:
+      tags: true
+      condition: $PT_TRAVIS_TEST_CORE2_XML = true
+    overwrite: true
+    skip_cleanup: true    
+    verbose: true
+  # If PT_TRAVIS_DOCS == true, then update codeDoc tar files.
+  - provider: releases
+    api_key: $GITHUB_TOKEN
+    file_glob: true
+    file:
+      - $PTII/doc/codeDoc*.jar
+    on:
+      tags: true
+      condition: $PT_TRAVIS_DOCS = true
+    overwrite: true
+    skip_cleanup: true    
+    verbose: true
+  # If PT_TRAVIS_TEST_INSTALLERS == true, then deploy the installers
+  # If this errors out with timeouts, then see
+  # https://github.com/travis-ci/dpl/issues/796
+  - provider: releases
+    api_key: $GITHUB_TOKEN
+    file_glob: true
+    file:
+      - $PTII/adm/gen-11.1/capecode0.3.devel.setup.mac.app.tar.gz
+      - $PTII/adm/gen-11.1/capecode0.3.devel.setup.linux.jar.tar.gz
+      - $PTII/adm/gen-11.1/capecode0_3_devel_setup_windows_64.exe
+      - $PTII/adm/gen-11.1/capecode0.3.devel.tar.gz
+      - $PTII/adm/gen-11.1/ptII11.1.devel.setup.mac.app.tar.gz
+      - $PTII/adm/gen-11.1/ptII11_1_devel_setup_windows_64.exe
+      - $PTII/adm/gen-11.1/ptII11_1_devel_setup_windows.exe
+      - $PTII/adm/gen-11.1/ptII11.1.devel.src.tar
+      - $PTII/adm/gen-11.1/ptII11.1.devel.src.zip
+    on:
+      tags: true
+      condition: $PT_TRAVIS_TEST_INSTALLERS = true
+    overwrite: true
+    skip_cleanup: true    
+    verbose: true
+
+# See https://docs.travis-ci.com/user/notifications/
+notifications:
+  email:
+    recipients:
+     - eal@berkeley.edu
+    on_success: always # default: change
+    on_failure: always # default: always

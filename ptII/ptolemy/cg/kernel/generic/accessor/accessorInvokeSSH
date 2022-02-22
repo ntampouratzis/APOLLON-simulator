@@ -1,0 +1,249 @@
+#!/bin/bash -e
+#
+# Use -e so that we exit if anything returns with a non-zero status.
+#
+# $Id$
+# A script that deploys a composite accessor to a remote machine.
+#
+# This script is used by:
+#   $PTII/bin/vergil -capecode $PTII/ptolemy/cg/kernel/generic/accessor/test/auto/RampJSTextDisplay.xml 
+#
+# The steps are:
+# 1. Create a directory on the remote machine
+# 2. Use npm to install @terraswarm/accessors, pm2 and any other
+# modules on the remote machine
+# 3. Create a small script to run the composite accessor on the remote machine
+# 4. Copy the accessor to the remote machine
+# 5. Invoke the accessor on the remote machine using pm2
+
+# There are some notes at https://www.icyphy.org/accessors/wiki/Notes/NodeForever
+
+usage="$0: Usage: $0 remoteuser@remotehost compositeAccessor.js [-timeout timeoutInMs] [-modules \"module1[,module2...]\"] [npmInstall] [runForever] [stopForeverAccessors]"
+
+# There are the following command line arguments: 
+#
+# npmInstall - If present, then install the modules.  If not present,
+# then assume that ~/cg/node_modules is set. If not present and
+# ~/cg/node_modules/@terraswarm/accessors does not exist, then nothing
+# will work.
+
+# runForever - If present, then use pm2 to run the accessor and
+# save the configuration.
+# This requires running "pm2 startup" on the host, which typically
+# requires running a command as root.
+
+# stopForeverAccessors - If present, then use pm2 to stop
+# accessor(s) with the same name as the model.
+
+if [ $# -lt 2 ]; then
+    echo $usage
+    exit 3
+fi
+
+userHost=$1
+
+accessor=$2
+
+
+modules=""
+npmInstall=""
+runForever=""
+stopForeverAccessors=""
+timeout=15000
+
+
+shift;shift
+while [ $# -gt 0 ]
+do
+    key=$1
+    case $key in
+        -list|--list)
+            list=yes
+            ;;
+        -modules|--modules)
+            if [ $# -lt 2 ]; then
+                echo "$0: Usage $key must be followed by one or more comma-separated modules to be installed using npm"
+                echo $usage
+                exit 4
+            fi
+            modules=$2
+            shift
+            ;;
+        -timeout|--timeout)
+            if [ $# -lt 2 ]; then
+                echo "$0: Usage $key must be followed by a timeout in ms."
+                echo $usage
+                exit 4
+            fi
+            timeout=$2
+            shift
+            ;;
+        npmInstall)
+            npmInstall=npmInstall
+            ;;
+        runForever)
+            runForever=runForever
+            ;;
+        stopForeverAccessors)
+            stopForeverAccessors=stopForeverAccessors
+            ;;
+        *) "echo $0: argument $key is not understood?"
+           exit 4;
+            ;;
+    esac
+    shift
+done
+
+if [ $timeout = "15000" ]; then
+    echo "$0: Note that the timeout defaults to $timeout"
+fi
+
+# Convert the comma separated list of modules to be installed to a space separated list.
+modules=`echo $modules | sed 's/,/ /g'`
+
+if [ ! -f "$accessor" ]; then
+    echo "$0: $accessor could not be found?"
+    exit 4
+fi
+
+# Place the demos in a cg/ directory in the remote user's home
+# directory.  Unfortunately, we can't use ~/cg or $HOME/cg because
+# they would be expanded locally.
+cg=cg
+
+# The name of the composite accessor file, which typically ends in .js.
+accessorShortName="`basename $accessor`"
+
+# The name of the composite accessor file without the .js.
+accessorDirectory="`basename $accessor .js`"
+
+# The directory in which we are to create files and run the accessor.
+runDirectory=$cg/$accessorDirectory
+
+node_modules=$cg/node_modules
+echo "### accessorInvokeSSH: Creating $node_modules and $runDirectory on $userHost"
+ssh $userHost mkdir -p $node_modules $runDirectory
+
+if [ ! -z "$npmInstall" ]; then
+    # This assumes that npm is installed.
+    echo "### accessorInvokeSSH: Running npm install @terraswarm/accessors pm2 $modules"
+    echo "### accessorInvokeSSH:   Ignore messages like: 'npm WARN enoent ENOENT: no such file or directory, open $runDirectory/package.json'"
+    ssh $userHost "cd $cg; echo $PATH; which npm; npm install @terraswarm/accessors pm2 $modules"
+
+    # We could check on the remote machine if we need to update the modules, but instead we just do it anyway.
+    echo "### accessorInvokeSSH: Running npm update @terraswarm/accessors pm2 $modules"
+    ssh $userHost "cd $cg; npm update @terraswarm/accessors pm2 $modules"
+fi
+
+echo "### accessorInvokeSSH: Creating $runDirectory/invoke.js"
+echo "var nodeHost = require('@terraswarm/accessors'); nodeHost.processCommandLineArguments(process.argv.slice(2));" | ssh $userHost "cat > $runDirectory/invoke.js"
+
+echo "### accessorInvokeSSH: Copying the accessor to $runDirectory"
+scp $accessor $userHost:$runDirectory/
+
+echo "### accessorInvokeSSH: Creating the runit.sh command in $runDirectory"
+runit=/tmp/runit.$$
+cat >>$runit <<EOF 
+#! /bin/sh
+
+# This script runs $accessorShortName using pm2
+
+usage="runit.sh [runForever|stopForeverAccessors]"
+
+pm2=\$HOME/cg/node_modules/.bin/pm2
+
+# This script was created by
+# \$PTII/ptolemy/cg/kernel/generic/accessor/accessorInvokeSSH
+
+while [ \$# -gt 0 ]
+do
+    key=\$1
+    case $key in
+        runForever)
+            runForever=runForever
+            ;;
+        stopForeverAccessors)
+            stopForeverAccessors=stopForeverAccessors
+            ;;
+        *) "echo $0: argument \$key is not understood?"
+           echo \$usage
+           exit 4;
+            ;;    
+    esac
+    shift;
+done
+
+# Remove the logs so that we don't see info from previous runs.
+rm -f pm2.accessor-*.log
+
+# Only attempt to stop the accessors if this script was
+# invoked with stopForeverAccessors or runAfterReboog.  If the script was
+# invoked without stopForeverAccessors or runForever, then we are not
+# using pm2 and we should not try to stop.
+
+if [ ! -z "\$stopForeverAccessors" -o ! -z "\$runForever" ]; then
+
+    echo "Using pm2 to stop $accessorShortName, it is ok if the Process is not found"
+
+    \$pm2 delete $accessorShortName
+
+fi
+
+if [ ! -z "\$stopForeverAccessors" ]; then
+
+    echo "$0: invoked with stopForeverAccessors, not running."
+
+elif [ ! -z "\$runForever" ]; then
+
+     # We are already in $runDirectory
+     echo "Current directory: \`pwd\`"
+
+     \$pm2 start \
+          --log pm2.accessor.log \
+          --name $accessorShortName \
+          ./invoke.js \
+          -- \
+          -timeout $timeout \
+          $accessorShortName
+
+    echo "Note that for pm2 to restart after reboot, you need to run the following command, which requires root access."          
+    \$pm2 startup
+
+    \$pm2 save
+
+else 
+    echo "Running $accessorShortName *once* for $timeout ms."
+    node \
+        \$HOME/$runDirectory/invoke.js \
+             -timeout $timeout \
+             \$HOME/$runDirectory/$accessorShortName
+fi
+
+# Only list the processes if stopForeverAccesors or runForever were
+# used as arguments.
+if [ ! -z "\$stopForeverAccessors" -o ! -z "\$runForever" ]; then
+    echo "Here are the pm2 processes:"
+    if [ ! -z "\$stopForeverAccessors" ]; then
+        echo "(There should be no forever processes running)"
+    fi
+    \$pm2 status
+fi
+
+EOF
+
+scp $runit $userHost:$runDirectory/runit.sh
+ssh $userHost chmod a+x $runDirectory/runit.sh
+
+echo "### accessorInvokeSSH: Invoking $runDirectory/runit.sh $runForever $stopForeverAccessors on $userHost"
+# Run in $runDirectory so that we can be sure to get cg/node_modules
+ssh $userHost "cd $runDirectory; ./runit.sh $runForever $stopForeverAccessors"
+
+echo "### accessorInvokeSSH: ssh $runDirectory/runit.sh returned."
+
+if [ ! -z "$runForever" ]; then
+    echo "### accessorInvokeSSH: Here are the pm2logs"
+    ssh $userHost tail -f $runDirectory/pm2.accessor-*.log
+fi    
+
+#rm $runit
+#ssh $userHost rm -rf $runDirectory

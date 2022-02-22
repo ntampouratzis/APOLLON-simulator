@@ -1,0 +1,103 @@
+#!/bin/sh
+# $Id$
+
+# A wrapper script for ant, node and npm.
+# All three files are the same and use "basename $0" to differentiate
+# We could use hard links or symbolic links here, but it is safer to have duplicates.
+# The ptII tree includes Apache ant in $PTII/ant.
+# The ptII installers may include Node.js in $PTII/vendors/node.
+# This script attempts to run those versions
+
+if [ -z "$PTII" ]; then
+    echo "$0: \$PTII must be set."
+    exit 3
+fi
+
+if [ ! -e "$PTII" ]; then
+    echo "$0: \$PTII is $PTII, which does not exist?"
+    exit 4
+fi
+
+commandname=`basename "$0"`
+case $commandname in
+    ant)
+        REALBIN="$PTII/ant/bin/ant"
+        ERROR_MESSAGE="$0: Could not find $commandname in $PATH, perhaps $commandname is not installed?  See https://ant.apache.org/bindownload"
+        ;;
+    node|npm)
+        ERROR_MESSAGE="$0: Could not find $commandname in $PATH, perhaps $commandname is not installed?  See https://nodejs.org/en/download/"
+        # Don't use node 8.x because npm 5 removes files in node_modules.  See https://www.icyphy.org/accessors/wiki/Notes/Npm5
+        if [ ! -d "$PTII/vendors/node" ]; then
+            NODE_VERSION=$PTII/vendors/node/node
+        else 
+            NODE_VERSION=$PTII/vendors/node/`(cd $PTII/vendors/node; ls -1d node-v* | grep -v 'node-v8' | sed 's/\(node-v[^-]*\)-.*/\1/'| sort | tail -1)`
+        fi
+        OS=`uname -s`
+        MACHINE=`uname -m`
+        case $OS in
+            Cygwin*)
+                if [ "$MACHINE" = "x86_64" ]; then
+                    NODE_DIR=${NODE_VERSION}-win-x64
+                else
+                    NODE_DIR=${NODE_VERSION}-win-32
+                fi
+                ;;
+            Darwin)
+                NODE_DIR=${NODE_VERSION}-darwin-x64;;
+            Linux)
+                if [ "$MACHINE" = "x86_64" ]; then
+                    NODE_DIR=${NODE_VERSION}-linux-x64
+                else
+                    NODE_DIR=${NODE_VERSION}-linux-32
+                fi
+                ;;
+            *) NODE_DIR=${NODE_VERSION}-unknownArch;;
+        esac
+        case $commandname in
+            node)
+                REALBIN="$NODE_DIR/bin/node"
+                ;;
+            npm)
+                REALBIN="$NODE_DIR/bin/npm"
+                ;;
+            *)
+                echo "$0: Must be one of ant node or npm, saw $commandname?"
+                exit 3
+        esac
+        ;;
+    *)
+        echo "$0: Must be one of ant, node or npm"
+        exit 2
+        ;;
+esac    
+
+if [ -f "$REALBIN" ]; then
+    if [ ! -x "$REALBIN" ]; then
+        chmod a+x "$REALBIN"
+    fi
+    echo "$0: Running $REALBIN $@"
+    exec "$REALBIN" $@
+    retval=$?
+    exit $?
+else
+    (
+        IFS=:
+        for p in $PATH; do
+            # Find the first commandname that is not $PTII/bin/$commandname
+            #echo "Looping through path: $p/#commandname"
+            if [ -x "$p/$commandname" ]; then
+                #echo "$0: $p/commandname is executable: $0"
+                # Ideally, we would use -ef here, but it is an extension
+                if [ "$p/$commandname" != "$0" ]; then
+                    #echo "$0: $p/$commandname is not the same as $0"
+                    echo "$0: Running $p/$commandname $@"
+                    exec "$p/$commandname" $@
+                    retval=$?
+                    exit $?
+                fi
+            fi
+        done
+        echo $ERROR_MESSAGE
+        exit 2
+    )
+fi
