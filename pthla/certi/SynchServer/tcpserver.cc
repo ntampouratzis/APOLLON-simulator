@@ -1,9 +1,9 @@
 /*
  * ----------------------------------------------------------------------------
  * Synchronization Server. It is used to initiate the HLA Federations.
- * Copyright (c) 2018, H2020 COSSIM.
- * Copyright (c) 2018, Telecommunications Systems Institute.
- * Author: Nikolaos Tampouratzis, ntampouratzis@isc.tuc.gr
+ * Copyright (c) 2022, H2020 COSSIM.
+ * Copyright (c) 2022, EXAPSYS
+ * Author: Nikolaos Tampouratzis, tampouratzis@exapsys.eu
  * ----------------------------------------------------------------------------
  */
 
@@ -17,6 +17,8 @@
 #include <string.h>
 #include <sys/types.h>
 #include <time.h> 
+
+#include <signal.h>
 
 #include <iostream>
 #include <cstdlib>
@@ -53,6 +55,10 @@ pthread_t tid[3*MAX_CONNECTIONS];
 pthread_mutex_t lock1;
 pthread_mutex_t lock2;
 pthread_mutex_t lock3;
+
+int listenfd  = 0;
+int listenfd2 = 0;
+int listenfd3 = 0;
 
 typedef struct HLAInitializationRequests{
  int type;
@@ -494,11 +500,18 @@ void* ApollonHandleFunction(void *arg){
   return 0;
 }
 
+void intHandler(int dummy) {
+    int truee = 1;
+    setsockopt(listenfd,SOL_SOCKET,SO_REUSEADDR,&truee,sizeof(int));
+    setsockopt(listenfd2,SOL_SOCKET,SO_REUSEADDR,&truee,sizeof(int));
+    setsockopt(listenfd3,SOL_SOCKET,SO_REUSEADDR,&truee,sizeof(int));
+}
+
 
 int main(int argc, char *argv[])
 {
     ExitVar = false;
-    int listenfd = 0;
+    
     struct sockaddr_in serv_addr; 
 
     listenfd = socket(AF_INET, SOCK_STREAM, 0);
@@ -511,6 +524,8 @@ int main(int argc, char *argv[])
     bind(listenfd, (struct sockaddr*)&serv_addr, sizeof(serv_addr)); 
 
     listen(listenfd, MAX_CONNECTIONS); 
+    
+    signal(SIGALRM, intHandler);
     
     printf("\n SynchServer up and running (with %d MAX Connections) ...\n\n",MAX_CONNECTIONS);
     
@@ -528,7 +543,6 @@ int main(int argc, char *argv[])
     
     
     /* CPT Server Implementation */
-    int listenfd2 = 0;
     struct sockaddr_in serv_addr2; 
 
     listenfd2 = socket(AF_INET, SOCK_STREAM, 0);
@@ -556,7 +570,6 @@ int main(int argc, char *argv[])
     
     
     /* Apollon Server Implementation */
-    int listenfd3 = 0;
     struct sockaddr_in serv_addr3; 
 
     listenfd3 = socket(AF_INET, SOCK_STREAM, 0);
