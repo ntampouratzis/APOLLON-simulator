@@ -21,4 +21,4 @@ ACM Trans. Archit. Code Optim., vol. 17, no. 1, Mar. 2020.
 Available: https://dl.acm.org/doi/10.1145/3378934
 
 <a id="2">[2]</a> 
-To be defined!!
+To be defined!
