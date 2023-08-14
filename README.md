@@ -21,4 +21,4 @@ ACM Trans. Archit. Code Optim., vol. 17, no. 1, Mar. 2020.
 Available: https://dl.acm.org/doi/10.1145/3378934
 
 <a id="2">[2]</a> 
-To be defined!
+N. Tampouratzis, P. Mousouliotis and I. Papaefstathiou, "A Novel Integrated Simulation Framework for Cyber-Physical Systems Modelling," in IEEE Transactions on Parallel and Distributed Systems, vol. 34, no. 10, pp. 2684-2698, Oct. 2023, doi: 10.1109/TPDS.2023.3300081.
