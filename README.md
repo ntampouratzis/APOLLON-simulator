@@ -9,7 +9,7 @@ Implementation details is presented in [[2]](#2) journal paper.
 
 In order to install all parts of APOLLON, you may read the file [Apollon Installation](apollon_install.sh) for aGEM5, aOMNET++ and HLA as well as the file [Ptloemy II Installation Notes](ptolemy-ii-version11-linux-installation-notes.txt) for Ptolemy II installation. We have tested an verified the process on Ubuntu 16.04 (similar commands can be used to install the tools in the newer versions of Ubuntu). 
 
-In addition we have created and distributed a Virual Machine which we have install everything there. You may donwload it from [here](http://kition.mhl.tuc.gr:8000/d/6331880f95) (It is tested using VMWare 16.1 tools). Finally here you can see videos with execution examples [Apollon gem5-Ptolemy](https://ihuedu-my.sharepoint.com/:u:/g/personal/ntampouratzis_ihu_gr/ETOy0uafOGhKhjXte9DSEw4BnQn6eDuGcP5Exu7ArZ4BGg?e=2F5UKL) , [APOLLON 2nodes](https://ihuedu-my.sharepoint.com/:u:/g/personal/ntampouratzis_ihu_gr/EQ8gGAf381dCrQidIlyXq4gBWgUwd2hoGevSBdra_Z6RAg?e=ms2cvf).
+In addition we have created and distributed a Virual Machine which we have install everything there. You may donwload it from [here](https://ihuedu-my.sharepoint.com/:f:/g/personal/ntampouratzis_ihu_gr/ElwzbvsKrOREs39K9FP4XXIBeV6A-5dGXOLDEzBeDTB8sQ?e=mqo99c) (It is tested using VMWare 16.1 tools). Finally here you can see videos with execution examples [Apollon gem5-Ptolemy](https://ihuedu-my.sharepoint.com/:u:/g/personal/ntampouratzis_ihu_gr/ETOy0uafOGhKhjXte9DSEw4BnQn6eDuGcP5Exu7ArZ4BGg?e=2F5UKL) , [APOLLON 2nodes](https://ihuedu-my.sharepoint.com/:u:/g/personal/ntampouratzis_ihu_gr/EQ8gGAf381dCrQidIlyXq4gBWgUwd2hoGevSBdra_Z6RAg?e=ms2cvf).
 
 
 ## References
